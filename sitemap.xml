@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://thezetner.github.io/cct/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://thezetner.github.io/cct/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/articles/hierarchyfuncs.html</loc>
+    <loc>https://thezetner.github.io/cct/articles/hierarchyfuncs.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>https://thezetner.github.io/cct/articles/index.html</loc>
   </url>
   <url>
-    <loc>/articles/usingcctfunctions.html</loc>
+    <loc>https://thezetner.github.io/cct/articles/usingcctfunctions.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://thezetner.github.io/cct/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://thezetner.github.io/cct/index.html</loc>
   </url>
   <url>
-    <loc>/reference/checkCache.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/checkCache.html</loc>
   </url>
   <url>
-    <loc>/reference/constellationToTable.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/constellationToTable.html</loc>
   </url>
   <url>
-    <loc>/reference/expandChildren.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/expandChildren.html</loc>
   </url>
   <url>
-    <loc>/reference/fromDFtoNetwork.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/fromDFtoNetwork.html</loc>
   </url>
   <url>
-    <loc>/reference/getDescendants.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/getDescendants.html</loc>
   </url>
   <url>
-    <loc>/reference/getVariants.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/getVariants.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/makeWatchlist.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/makeWatchlist.html</loc>
   </url>
   <url>
-    <loc>/reference/pipe.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/pipe.html</loc>
   </url>
   <url>
-    <loc>/reference/pullAncestors.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/pullAncestors.html</loc>
   </url>
   <url>
-    <loc>/reference/sortLineages.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/sortLineages.html</loc>
   </url>
   <url>
-    <loc>/reference/uniqueListElements.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/uniqueListElements.html</loc>
   </url>
   <url>
-    <loc>/reference/updateHierarchies.html</loc>
+    <loc>https://thezetner.github.io/cct/reference/updateHierarchies.html</loc>
   </url>
 </urlset>
