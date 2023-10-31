@@ -1,0 +1,38 @@
+---
+title: "Using CCT Functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using CCT Functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(eval = F,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(CCT)
+library(purrr)
+```
+
+## Constellation to Table
+
+- Create a long table of constellations with one line per mutation per constellation
+- Steps:
+  - Clone the cov-lineages constellations repo from [here](https://github.com/cov-lineages/constellations) into `data/constellations`
+  - Pull in constellations with constellationsToTable()
+  - Received table of _label, variant, Gene, Mutation, who_
+
+```{r constellationToTable}
+filelist <- list.files("data/constellations/constellations/definition", full.names = T)
+
+l <- purrr::map(filelist, ~ constellationToTable(.x))
+
+constellations <- dplyr::bind_rows(l)
+
+dplyr::glimpse(constellations)
+``

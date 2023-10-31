@@ -1,0 +1,3 @@
+[submodule "data/constellations"]
+	path = data/constellations
+	url = git@github.com:cov-lineages/constellations.git

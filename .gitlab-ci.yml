@@ -1,0 +1,9 @@
+pages:
+  stage: deploy
+  script:
+    - mv docs public
+  artifacts:
+    paths:
+      - public
+  except:
+    - merge_requests

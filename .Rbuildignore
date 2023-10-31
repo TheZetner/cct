@@ -1,0 +1,12 @@
+^CCT\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^data$
+^docs$
+.gitlab-ci.yml
+^scratch$
+^doc$
+^Meta$
+^\.github$
+^_pkgdown\.yml$
+^pkgdown$

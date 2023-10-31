@@ -1,0 +1,129 @@
+---
+title: "CCT Hierarchy Functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{CCT Hierarchy Functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Load from Cache, Update if New Lineages Found or Create Cache if Missing
+
+- Cache is written to a basic 'rda' file in the user's local AppData directory
+- Will not overwrite cache if update has no new lineages compared to cache
+- The force argument forcibly returns the lineages in the file specified regardless of how it compares to the cache
+- Can supply either `lineages_url` or `aliases_url` to target specific files with `updateHierarchies()`
+
+```{r}
+library(CCT)
+# Grab an older version
+cachedat <- checkCache(lineages_url = "https://raw.githubusercontent.com/cov-lineages/pango-designation/4b5957e151c10e92cb49e9df904c0b2ea841f3eb/lineage_notes.txt")
+
+purrr::map(cachedat, head)
+```
+
+
+```{r}
+# how many lineages?
+nrow(cachedat$lineages)
+```
+
+
+```{r}
+# Grab latest version
+cachedat <- checkCache()
+
+# how many lineages?
+nrow(cachedat$lineages)
+```
+
+## Run All in One Line
+- Building this documentation at a time when the master file is broken so linking specifically to my own
+
+```{r}
+hierarchy <-
+  CCT::updateHierarchies(lineages_url = "https://raw.githubusercontent.com/TheZetner/pango-designation/master/lineage_notes.txt") %>% CCT::fromDFtoNetwork()
+
+hierarchy
+```
+
+## Update Hierarchies
+
+- Lineages: https://github.com/cov-lineages/pango-designation/blob/master/lineage_notes.txt
+- Aliases: https://github.com/cov-lineages/pango-designation/blob/master/pango_designation/alias_key.json
+- Can supply a specific local file or version of the files above
+- Reports which file failed if one does
+- Returns a table of Parent/Lineage/Children
+```{r}
+l <- CCT::updateHierarchies(lineages_url = "https://raw.githubusercontent.com/TheZetner/pango-designation/master/lineage_notes.txt")
+
+head(l)
+```
+
+## From Dataframe to Network
+- Take the dataframe from `updateHierarchies()` and build a node network using [data.tree](https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html)
+- Defines the parent-child relationship between each node (lineage)
+- Also returns a table of "orphan" lineages that are missing parents in the table as these break the network and are removed
+```{r}
+ll <- fromDFtoNetwork(l)
+ll
+```
+
+## Pull all the Ancestors of a Node
+
+### Network
+```{r}
+ancestors <- pullAncestors(ll$network, "BA.5.2", table = FALSE)
+ancestors
+```
+
+### Table
+```{r}
+ancestors <- pullAncestors(ll$network, "BA.5.2", table = TRUE)
+ancestors
+```
+
+### Vector
+```{r}
+# vector supersedes table param
+ancestors <- pullAncestors(ll$network, "BA.5.2", table = TRUE, vector = TRUE)
+ancestors
+```
+
+
+## Get all the Descendants of a Node
+
+### Network
+```{r}
+getDescendants(ll$network, "BF.7", table = FALSE) %>% plot()
+```
+
+### Table
+```{r}
+getDescendants(ll$network, "BF.7", table = TRUE)
+```
+
+### Vector
+```{r}
+# vector supersedes table param
+getDescendants(ll$network, "BF.7", table = TRUE, vector = TRUE)
+```
+
+
+## Make YAML Watchlist (for Augur)
+```{r}
+getDescendants(ll$network, "BF.7", vector = TRUE) %>% makeWatchlist()
+```
+
+
+## Download Variants table from CoVariants
+```{r}
+vars <- getVariants()
+vars
+```
+
+
+## Expand Variants Table to Include all Children
+```{r}
+expandChildren(head(vars), ll$network)
+```
