@@ -1,6 +1,7 @@
 # Common Covid Tasks
 
 CCT combines a number of commonly requested covid related tasks into an easy(ish) to use package.
+
 - Create a node network hierarchy from the [pangolin](https://github.com/cov-lineages/pango-designation) lineages and aliases
 - Cache that data locally in case of remote data or access problems
 - Query that network for ancestors and descendants of a lineage
