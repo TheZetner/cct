@@ -4,25 +4,20 @@
 \alias{checkCache}
 \title{Check Cache vs Current}
 \usage{
-checkCache(overwrite = TRUE, ...)
+checkCache(overwrite = TRUE, network = FALSE, ...)
 }
 \arguments{
-\item{overwrite}{set to false to compare cache to file and return data}
+\item{overwrite}{set to false to compare cache to file and return data without writing}
 
 \item{...}{Pass alternate \code{lineages_url} and \code{aliases_url} to \code{updateHierarchies}}
+
+\item{output}{logical, TRUE for network (produced by fromDFtoNetwork) FALSE for table}
 }
 \value{
-a list with three or more elements
+depending on the value of output
 \itemize{
-\item lineages list with fixed aliases
-\item hierarchy list
-\itemize{
+\item table of lineage hierarchies with fixed aliases
 \item a Node class network object describing the hierarchy of lineages
-\item a table of so-called orphan lineages that call on non-existent parents
-}
-\item file.info output showing most recent update time for cache
-\item new lineages between cache and update
-\item new aliases between cache and update
 }
 }
 \description{

@@ -9,22 +9,19 @@
 #'
 #' @import rappdirs magrittr stringr
 #'
-#' @param overwrite set to false to compare cache to file and return data
+#' @param overwrite set to false to compare cache to file and return data without writing
+#' @param output logical, TRUE for network (produced by fromDFtoNetwork) FALSE for table
 #' @param ... Pass alternate `lineages_url` and `aliases_url` to `updateHierarchies`
 #'
-#' @return a list with three or more elements
-#'  - lineages list with fixed aliases
-#'  - hierarchy list
-#'    - a Node class network object describing the hierarchy of lineages
-#'    - a table of so-called orphan lineages that call on non-existent parents
-#'  - file.info output showing most recent update time for cache
-#'  - new lineages between cache and update
-#'  - new aliases between cache and update
+#' @return depending on the value of output
+#'  - table of lineage hierarchies with fixed aliases
+#'  - a Node class network object describing the hierarchy of lineages
 #' @importFrom stats na.omit
 #' @importFrom utils read.table stack
 #' @export
 
 checkCache <- function(overwrite = TRUE,
+                       network = FALSE,
                        ...) {
   # Do we need a new cache?
   if (Sys.info()["sysname"] == "Windows") {
@@ -37,8 +34,6 @@ checkCache <- function(overwrite = TRUE,
     cache.dir <- rappdirs::user_data_dir(appname = "CCT")
     cache.file <- paste0(cache.dir, "/cct_cache.rda")
   }
-
-  output <- list()
 
   if (file.exists(cache.file)) {
     message("Loading and checking cache file: ", cache.file)
@@ -53,23 +48,18 @@ checkCache <- function(overwrite = TRUE,
         message("Error acquiring remote files, using cache")
       } else {
         new.lineages <- dplyr::anti_join(updated.lineages, lineages)
-
-        output <- append(
-          output,
-          list(newlineages = new.lineages)
-        )
       }
     } else {
       message("No internet access, using cache")
     }
 
 
-
     if (nrow(new.lineages) > 0) {
-      message("Lineages list differs from cached, updating hierarchies")
+      message("Lineages list differs from cached, updating lineage hierarchies")
+      paste("Number of new lineages added:", message(nrow(new.lineages)))
       lineages <- updated.lineages
       if (overwrite) {
-        message("Overwriting ", cache.file, " with new hierarchies")
+        message("Overwriting ", cache.file, " with new lineage hierarchies")
         # Save data
         save(lineages,
           file = cache.file
@@ -92,9 +82,7 @@ checkCache <- function(overwrite = TRUE,
       message("This often occurs when the target file has bad formatting")
       message("Perhaps point to the previous commit if this error is new")
     } else {
-      hierarchy <- CCT::fromDFtoNetwork(lineages)
-
-      message("Writing ", cache.file, " with hierarchies")
+      message("Writing ", cache.file, " with lineage hierarchy table")
       # Save data
       save(lineages,
         file = cache.file
@@ -102,18 +90,17 @@ checkCache <- function(overwrite = TRUE,
     }
   }
 
-  message("Returning list of cache objects")
 
-  output <- append(
-    output,
-    list(
-      lineages = lineages,
-      hierarchy = CCT::fromDFtoNetwork(lineages),
-      info = file.info(cache.file)
-    )
-  )
+  message("Returning lineage hierarchies as...")
 
-  output
+  if(network){
+    message("Network")
+    CCT::fromDFtoNetwork(lineages)[["network"]]
+  }else{
+    message("Table")
+    lineages
+  }
+
 }
 
 #' Update PANGO Hierarchies from Github Files

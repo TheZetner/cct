@@ -13,19 +13,22 @@ vignette: >
 - Will not overwrite cache if update has no new lineages compared to cache
 - The force argument forcibly returns the lineages in the file specified regardless of how it compares to the cache
 - Can supply either `lineages_url` or `aliases_url` to target specific files with `updateHierarchies()`
+- checkCache returns a table of lineage hierarchies by default or a data.tree network with `network = TRUE`
+
+### Table
 
 ```{r}
 library(CCT)
 # Grab an older version
 cachedat <- checkCache(lineages_url = "https://raw.githubusercontent.com/cov-lineages/pango-designation/4b5957e151c10e92cb49e9df904c0b2ea841f3eb/lineage_notes.txt")
 
-purrr::map(cachedat, head)
+head(cachedat)
 ```
 
 
 ```{r}
 # how many lineages?
-nrow(cachedat$lineages)
+nrow(cachedat)
 ```
 
 
@@ -34,8 +37,14 @@ nrow(cachedat$lineages)
 cachedat <- checkCache()
 
 # how many lineages?
-nrow(cachedat$lineages)
+nrow(cachedat)
 ```
+
+### Network
+```{r}
+cachedatNET <- checkCache(network = TRUE)
+```
+
 
 ## Run All in One Line
 - Building this documentation at a time when the master file is broken so linking specifically to my own
@@ -61,9 +70,10 @@ head(l)
 ```
 
 ## From Dataframe to Network
-- Take the dataframe from `updateHierarchies()` and build a node network using [data.tree](https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html)
+- Take the dataframe from `updateHierarchies()` or `checkCache(network = FALSE)` and build a node network using [data.tree](https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html)
 - Defines the parent-child relationship between each node (lineage)
 - Also returns a table of "orphan" lineages that are missing parents in the table as these break the network and are removed
+- Can replace `ll$network` with `cachedatNET` from above
 ```{r}
 ll <- fromDFtoNetwork(l)
 ll
@@ -74,6 +84,8 @@ ll
 ### Network
 ```{r}
 ancestors <- pullAncestors(ll$network, "BA.5.2", table = FALSE)
+# ancestors <- pullAncestors(cachedatNET, "BA.5.2", table = FALSE)
+
 ancestors
 ```
 
