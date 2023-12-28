@@ -16,7 +16,7 @@ updateHierarchies() can be supplied using aliases_url and lineages_url"><!-- mat
     
     <a class="navbar-brand me-2" href="../index.html">CCT</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,30 +64,29 @@ to skip overwrite of cache and just return lineages. Custom target files for
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">checkCache</span><span class="op">(</span>overwrite <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">checkCache</span><span class="op">(</span>overwrite <span class="op">=</span> <span class="cn">TRUE</span>, network <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>overwrite</dt>
-<dd><p>set to false to compare cache to file and return data</p></dd>
+<dd><p>set to false to compare cache to file and return data without writing</p></dd>
 
 
 <dt>...</dt>
 <dd><p>Pass alternate <code>lineages_url</code> and <code>aliases_url</code> to <code>updateHierarchies</code></p></dd>
+
+
+<dt>output</dt>
+<dd><p>logical, TRUE for network (produced by fromDFtoNetwork) FALSE for table</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>a list with three or more elements</p><ul><li><p>lineages list with fixed aliases</p></li>
-<li><p>hierarchy list</p><ul><li><p>a Node class network object describing the hierarchy of lineages</p></li>
-<li><p>a table of so-called orphan lineages that call on non-existent parents</p></li>
-</ul></li>
-<li><p>file.info output showing most recent update time for cache</p></li>
-<li><p>new lineages between cache and update</p></li>
-<li><p>new aliases between cache and update</p></li>
+<p>depending on the value of output</p><ul><li><p>table of lineage hierarchies with fixed aliases</p></li>
+<li><p>a Node class network object describing the hierarchy of lineages</p></li>
 </ul></div>
 
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
