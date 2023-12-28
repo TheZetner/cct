@@ -8,8 +8,8 @@
 <meta name="description" content="CCT">
 <title>CCT Hierarchy Functions • CCT</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="CCT Hierarchy Functions">
 <meta property="og:description" content="CCT">
@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">CCT</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,7 +66,7 @@
 
 
 
-<script src="hierarchyfuncs_files/htmlwidgets-1.6.2/htmlwidgets.js"></script><script src="hierarchyfuncs_files/viz-1.8.2/viz.js"></script><link href="hierarchyfuncs_files/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="hierarchyfuncs_files/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="hierarchyfuncs_files/viz-1.8.2/viz.js"></script><link href="hierarchyfuncs_files/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
 <script src="hierarchyfuncs_files/grViz-binding-1.0.10/grViz.js"></script><div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>CCT Hierarchy Functions</h1>
@@ -93,164 +93,62 @@ specified regardless of how it compares to the cache</li>
 <code>aliases_url</code> to target specific files with
 <code><a href="../reference/updateHierarchies.html">updateHierarchies()</a></code>
 </li>
+<li>checkCache returns a table of lineage hierarchies by default or a
+data.tree network with <code>network = TRUE</code>
+</li>
 </ul>
+<div class="section level3">
+<h3 id="table">Table<a class="anchor" aria-label="anchor" href="#table"></a>
+</h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/TheZetner/cct" class="external-link">CCT</a></span><span class="op">)</span></span>
 <span><span class="co"># Grab an older version</span></span>
 <span><span class="va">cachedat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/checkCache.html">checkCache</a></span><span class="op">(</span>lineages_url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/cov-lineages/pango-designation/4b5957e151c10e92cb49e9df904c0b2ea841f3eb/lineage_notes.txt"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Getting new cache file data and preparing to write ~/.local/share/CCT/cct_cache.rda</span></span></code></pre>
-<pre><code><span><span class="co">## Joining with `by = join_by(lineage, parent)`</span></span>
-<span><span class="co">## Writing ~/.local/share/CCT/cct_cache.rda with hierarchies</span></span>
-<span><span class="co">## Returning list of cache objects</span></span>
-<span><span class="co">## Joining with `by = join_by(lineage, parent)`</span></span></code></pre>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">map</a></span><span class="op">(</span><span class="va">cachedat</span>, <span class="va">head</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## $lineages</span></span>
-<span><span class="co">##    lineage parent children</span></span>
+<pre><code><span><span class="co">## Writing ~/.local/share/CCT/cct_cache.rda with lineage hierarchy table</span></span></code></pre>
+<pre><code><span><span class="co">## Returning lineage hierarchies as...</span></span></code></pre>
+<pre><code><span><span class="co">## Table</span></span></code></pre>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">cachedat</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">##    lineage parent children</span></span>
 <span><span class="co">## 1        A   &lt;NA&gt;        A</span></span>
 <span><span class="co">## 35     A.1      A      A.1</span></span>
 <span><span class="co">## 3        A   &lt;NA&gt;      A.1</span></span>
 <span><span class="co">## 41     A.2      A      A.2</span></span>
 <span><span class="co">## 5        A   &lt;NA&gt;      A.2</span></span>
-<span><span class="co">## 44   A.2.2    A.2    A.2.2</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## $hierarchy</span></span>
-<span><span class="co">## $hierarchy$network</span></span>
-<span><span class="co">##                                    levelName</span></span>
-<span><span class="co">## 1   MRCA                                    </span></span>
-<span><span class="co">## 2    ¦--A                                   </span></span>
-<span><span class="co">## 3    ¦   ¦--A.1                             </span></span>
-<span><span class="co">## 4    ¦   ¦--A.2                             </span></span>
-<span><span class="co">## 5    ¦   ¦   ¦--A.2.2                       </span></span>
-<span><span class="co">## 6    ¦   ¦   ¦--A.2.3                       </span></span>
-<span><span class="co">## 7    ¦   ¦   ¦--A.2.4                       </span></span>
-<span><span class="co">## 8    ¦   ¦   °--A.2.5                       </span></span>
-<span><span class="co">## 9    ¦   ¦       ¦--A.2.5.1                 </span></span>
-<span><span class="co">## 10   ¦   ¦       ¦--A.2.5.2                 </span></span>
-<span><span class="co">## 11   ¦   ¦       °--A.2.5.3                 </span></span>
-<span><span class="co">## 12   ¦   ¦--A.3                             </span></span>
-<span><span class="co">## 13   ¦   ¦--A.4                             </span></span>
-<span><span class="co">## 14   ¦   ¦--A.5                             </span></span>
-<span><span class="co">## 15   ¦   ¦--A.6                             </span></span>
-<span><span class="co">## 16   ¦   ¦--A.7                             </span></span>
-<span><span class="co">## 17   ¦   ¦--A.9                             </span></span>
-<span><span class="co">## 18   ¦   ¦--A.11                            </span></span>
-<span><span class="co">## 19   ¦   ¦--A.12                            </span></span>
-<span><span class="co">## 20   ¦   ¦--A.15                            </span></span>
-<span><span class="co">## 21   ¦   ¦--A.16                            </span></span>
-<span><span class="co">## 22   ¦   ¦--A.17                            </span></span>
-<span><span class="co">## 23   ¦   ¦--A.18                            </span></span>
-<span><span class="co">## 24   ¦   ¦--A.19                            </span></span>
-<span><span class="co">## 25   ¦   ¦--A.21                            </span></span>
-<span><span class="co">## 26   ¦   ¦--A.22                            </span></span>
-<span><span class="co">## 27   ¦   ¦--A.23                            </span></span>
-<span><span class="co">## 28   ¦   ¦   °--A.23.1                      </span></span>
-<span><span class="co">## 29   ¦   ¦--A.24                            </span></span>
-<span><span class="co">## 30   ¦   ¦--A.25                            </span></span>
-<span><span class="co">## 31   ¦   ¦--A.26                            </span></span>
-<span><span class="co">## 32   ¦   ¦--A.27                            </span></span>
-<span><span class="co">## 33   ¦   ¦--A.28                            </span></span>
-<span><span class="co">## 34   ¦   ¦--A.29                            </span></span>
-<span><span class="co">## 35   ¦   °--A.30                            </span></span>
-<span><span class="co">## 36   ¦--B                                   </span></span>
-<span><span class="co">## 37   ¦   ¦--B.1                             </span></span>
-<span><span class="co">## 38   ¦   ¦   ¦--B.1.1                       </span></span>
-<span><span class="co">## 39   ¦   ¦   ¦   ¦--B.1.1.1                 </span></span>
-<span><span class="co">## 40   ¦   ¦   ¦   ¦   ¦--C.1                 </span></span>
-<span><span class="co">## 41   ¦   ¦   ¦   ¦   ¦   ¦--C.1.1           </span></span>
-<span><span class="co">## 42   ¦   ¦   ¦   ¦   ¦   °--C.1.2           </span></span>
-<span><span class="co">## 43   ¦   ¦   ¦   ¦   ¦--C.2                 </span></span>
-<span><span class="co">## 44   ¦   ¦   ¦   ¦   ¦   °--C.2.1           </span></span>
-<span><span class="co">## 45   ¦   ¦   ¦   ¦   ¦--C.3                 </span></span>
-<span><span class="co">## 46   ¦   ¦   ¦   ¦   ¦--C.4                 </span></span>
-<span><span class="co">## 47   ¦   ¦   ¦   ¦   ¦--C.5                 </span></span>
-<span><span class="co">## 48   ¦   ¦   ¦   ¦   ¦--C.6                 </span></span>
-<span><span class="co">## 49   ¦   ¦   ¦   ¦   ¦--C.7                 </span></span>
-<span><span class="co">## 50   ¦   ¦   ¦   ¦   ¦--C.8                 </span></span>
-<span><span class="co">## 51   ¦   ¦   ¦   ¦   ¦--C.9                 </span></span>
-<span><span class="co">## 52   ¦   ¦   ¦   ¦   ¦--C.10                </span></span>
-<span><span class="co">## 53   ¦   ¦   ¦   ¦   ¦--C.11                </span></span>
-<span><span class="co">## 54   ¦   ¦   ¦   ¦   ¦--C.12                </span></span>
-<span><span class="co">## 55   ¦   ¦   ¦   ¦   ¦--C.13                </span></span>
-<span><span class="co">## 56   ¦   ¦   ¦   ¦   ¦--C.14                </span></span>
-<span><span class="co">## 57   ¦   ¦   ¦   ¦   ¦--C.16                </span></span>
-<span><span class="co">## 58   ¦   ¦   ¦   ¦   ¦--C.17                </span></span>
-<span><span class="co">## 59   ¦   ¦   ¦   ¦   ¦--C.18                </span></span>
-<span><span class="co">## 60   ¦   ¦   ¦   ¦   ¦--C.19                </span></span>
-<span><span class="co">## 61   ¦   ¦   ¦   ¦   ¦--C.20                </span></span>
-<span><span class="co">## 62   ¦   ¦   ¦   ¦   ¦--C.21                </span></span>
-<span><span class="co">## 63   ¦   ¦   ¦   ¦   ¦--C.22                </span></span>
-<span><span class="co">## 64   ¦   ¦   ¦   ¦   ¦--C.23                </span></span>
-<span><span class="co">## 65   ¦   ¦   ¦   ¦   ¦--C.25                </span></span>
-<span><span class="co">## 66   ¦   ¦   ¦   ¦   ¦--C.26                </span></span>
-<span><span class="co">## 67   ¦   ¦   ¦   ¦   ¦--C.27                </span></span>
-<span><span class="co">## 68   ¦   ¦   ¦   ¦   ¦--C.28                </span></span>
-<span><span class="co">## 69   ¦   ¦   ¦   ¦   ¦--C.29                </span></span>
-<span><span class="co">## 70   ¦   ¦   ¦   ¦   ¦--C.30                </span></span>
-<span><span class="co">## 71   ¦   ¦   ¦   ¦   ¦   °--C.30.1          </span></span>
-<span><span class="co">## 72   ¦   ¦   ¦   ¦   ¦--C.31                </span></span>
-<span><span class="co">## 73   ¦   ¦   ¦   ¦   ¦--C.32                </span></span>
-<span><span class="co">## 74   ¦   ¦   ¦   ¦   ¦--C.33                </span></span>
-<span><span class="co">## 75   ¦   ¦   ¦   ¦   ¦--C.34                </span></span>
-<span><span class="co">## 76   ¦   ¦   ¦   ¦   ¦--C.35                </span></span>
-<span><span class="co">## 77   ¦   ¦   ¦   ¦   ¦--C.36                </span></span>
-<span><span class="co">## 78   ¦   ¦   ¦   ¦   ¦   ¦--C.36.1          </span></span>
-<span><span class="co">## 79   ¦   ¦   ¦   ¦   ¦   ¦--C.36.2          </span></span>
-<span><span class="co">## 80   ¦   ¦   ¦   ¦   ¦   °--C.36.3          </span></span>
-<span><span class="co">## 81   ¦   ¦   ¦   ¦   ¦       °--C.36.3.1    </span></span>
-<span><span class="co">## 82   ¦   ¦   ¦   ¦   ¦--C.37                </span></span>
-<span><span class="co">## 83   ¦   ¦   ¦   ¦   ¦   °--C.37.1          </span></span>
-<span><span class="co">## 84   ¦   ¦   ¦   ¦   ¦--C.38                </span></span>
-<span><span class="co">## 85   ¦   ¦   ¦   ¦   ¦--C.39                </span></span>
-<span><span class="co">## 86   ¦   ¦   ¦   ¦   °--C.40                </span></span>
-<span><span class="co">## 87   ¦   ¦   ¦   ¦--B.1.1.3                 </span></span>
-<span><span class="co">## 88   ¦   ¦   ¦   ¦--B.1.1.4                 </span></span>
-<span><span class="co">## 89   ¦   ¦   ¦   ¦--B.1.1.5                 </span></span>
-<span><span class="co">## 90   ¦   ¦   ¦   ¦--B.1.1.7                 </span></span>
-<span><span class="co">## 91   ¦   ¦   ¦   ¦   ¦--Q.1                 </span></span>
-<span><span class="co">## 92   ¦   ¦   ¦   ¦   ¦--Q.2                 </span></span>
-<span><span class="co">## 93   ¦   ¦   ¦   ¦   ¦--Q.3                 </span></span>
-<span><span class="co">## 94   ¦   ¦   ¦   ¦   ¦--Q.4                 </span></span>
-<span><span class="co">## 95   ¦   ¦   ¦   ¦   ¦--Q.5                 </span></span>
-<span><span class="co">## 96   ¦   ¦   ¦   ¦   ¦--Q.6                 </span></span>
-<span><span class="co">## 97   ¦   ¦   ¦   ¦   ¦--Q.7                 </span></span>
-<span><span class="co">## 98   ¦   ¦   ¦   ¦   °--Q.8                 </span></span>
-<span><span class="co">## 99   ¦   ¦   ¦   ¦--B.1.1.8                 </span></span>
-<span><span class="co">## 100  ¦   ¦   ¦   °--... 400 nodes w/ 682 sub</span></span>
-<span><span class="co">## 101  ¦   ¦   °--... 455 nodes w/ 1577 sub   </span></span>
-<span><span class="co">## 102  ¦   °--... 46 nodes w/ 2047 sub        </span></span>
-<span><span class="co">## 103  °--... 52 nodes w/ 2108 sub            </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## $hierarchy$orphans</span></span>
-<span><span class="co">## [1] lineage parent </span></span>
-<span><span class="co">## &lt;0 rows&gt; (or 0-length row.names)</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## $info</span></span>
-<span><span class="co">##                                   size isdir mode               mtime</span></span>
-<span><span class="co">## ~/.local/share/CCT/cct_cache.rda 49784 FALSE  644 2023-10-31 17:53:48</span></span>
-<span><span class="co">##                                                ctime               atime  uid</span></span>
-<span><span class="co">## ~/.local/share/CCT/cct_cache.rda 2023-10-31 17:53:48 2023-10-31 17:53:48 1001</span></span>
-<span><span class="co">##                                  gid  uname grname</span></span>
-<span><span class="co">## ~/.local/share/CCT/cct_cache.rda 127 runner docker</span></span></code></pre>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># how many lineages?</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">cachedat</span><span class="op">$</span><span class="va">lineages</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## [1] 11087</span></span></code></pre>
+<span><span class="co">## 44   A.2.2    A.2    A.2.2</span></span></code></pre>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># how many lineages?</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">cachedat</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## [1] 11087</span></span></code></pre>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Grab latest version</span></span>
 <span><span class="va">cachedat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/checkCache.html">checkCache</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Loading and checking cache file: ~/.local/share/CCT/cct_cache.rda</span></span></code></pre>
 <pre><code><span><span class="co">## Check current status of remote files</span></span></code></pre>
 <pre><code><span><span class="co">## Joining with `by = join_by(lineage, parent, children)`</span></span>
-<span><span class="co">## Lineages list differs from cached, updating hierarchies</span></span>
-<span><span class="co">## Overwriting ~/.local/share/CCT/cct_cache.rda with new hierarchies</span></span>
-<span><span class="co">## Returning list of cache objects</span></span>
-<span><span class="co">## Joining with `by = join_by(lineage, parent)`</span></span></code></pre>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<span><span class="co">## Lineages list differs from cached, updating lineage hierarchies</span></span>
+<span><span class="co">## 10454</span></span>
+<span><span class="co">## Overwriting ~/.local/share/CCT/cct_cache.rda with new lineage hierarchies</span></span>
+<span><span class="co">## Returning lineage hierarchies as...</span></span>
+<span><span class="co">## Table</span></span></code></pre>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># how many lineages?</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">cachedat</span><span class="op">$</span><span class="va">lineages</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## [1] 20306</span></span></code></pre>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">cachedat</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## [1] 21521</span></span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="network">Network<a class="anchor" aria-label="anchor" href="#network"></a>
+</h3>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cachedatNET</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/checkCache.html">checkCache</a></span><span class="op">(</span>network <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Loading and checking cache file: ~/.local/share/CCT/cct_cache.rda</span></span></code></pre>
+<pre><code><span><span class="co">## Check current status of remote files</span></span></code></pre>
+<pre><code><span><span class="co">## Joining with `by = join_by(lineage, parent, children)`</span></span>
+<span><span class="co">## Returning lineage hierarchies as...</span></span>
+<span><span class="co">## Network</span></span>
+<span><span class="co">## Joining with `by = join_by(lineage, parent)`</span></span></code></pre>
+</div>
 </div>
 <div class="section level2">
 <h2 id="run-all-in-one-line">Run All in One Line<a class="anchor" aria-label="anchor" href="#run-all-in-one-line"></a>
@@ -259,11 +157,11 @@ specified regardless of how it compares to the cache</li>
 <li>Building this documentation at a time when the master file is broken
 so linking specifically to my own</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hierarchy</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu">CCT</span><span class="fu">::</span><span class="fu"><a href="../reference/updateHierarchies.html">updateHierarchies</a></span><span class="op">(</span>lineages_url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/TheZetner/pango-designation/master/lineage_notes.txt"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu">CCT</span><span class="fu">::</span><span class="fu"><a href="../reference/fromDFtoNetwork.html">fromDFtoNetwork</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Joining with `by = join_by(lineage, parent)`</span></span></code></pre>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hierarchy</span></span></code></pre></div>
 <pre><code><span><span class="co">## $network</span></span>
 <span><span class="co">##                                     levelName</span></span>
@@ -387,7 +285,7 @@ so linking specifically to my own</li>
 <li>Reports which file failed if one does</li>
 <li>Returns a table of Parent/Lineage/Children</li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">l</span> <span class="op">&lt;-</span> <span class="fu">CCT</span><span class="fu">::</span><span class="fu"><a href="../reference/updateHierarchies.html">updateHierarchies</a></span><span class="op">(</span>lineages_url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/TheZetner/pango-designation/master/lineage_notes.txt"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">l</span><span class="op">)</span></span></code></pre></div>
@@ -403,18 +301,21 @@ so linking specifically to my own</li>
 <h2 id="from-dataframe-to-network">From Dataframe to Network<a class="anchor" aria-label="anchor" href="#from-dataframe-to-network"></a>
 </h2>
 <ul>
-<li>Take the dataframe from <code><a href="../reference/updateHierarchies.html">updateHierarchies()</a></code> and build a
-node network using <a href="https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html" class="external-link">data.tree</a>
+<li>Take the dataframe from <code><a href="../reference/updateHierarchies.html">updateHierarchies()</a></code> or
+<code>checkCache(network = FALSE)</code> and build a node network using
+<a href="https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html" class="external-link">data.tree</a>
 </li>
 <li>Defines the parent-child relationship between each node
 (lineage)</li>
 <li>Also returns a table of “orphan” lineages that are missing parents
 in the table as these break the network and are removed</li>
+<li>Can replace <code>ll$network</code> with <code>cachedatNET</code>
+from above</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ll</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fromDFtoNetwork.html">fromDFtoNetwork</a></span><span class="op">(</span><span class="va">l</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Joining with `by = join_by(lineage, parent)`</span></span></code></pre>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ll</span></span></code></pre></div>
 <pre><code><span><span class="co">## $network</span></span>
 <span><span class="co">##                                     levelName</span></span>
@@ -530,10 +431,12 @@ in the table as these break the network and are removed</li>
 <h2 id="pull-all-the-ancestors-of-a-node">Pull all the Ancestors of a Node<a class="anchor" aria-label="anchor" href="#pull-all-the-ancestors-of-a-node"></a>
 </h2>
 <div class="section level3">
-<h3 id="network">Network<a class="anchor" aria-label="anchor" href="#network"></a>
+<h3 id="network-1">Network<a class="anchor" aria-label="anchor" href="#network-1"></a>
 </h3>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ancestors</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullAncestors.html">pullAncestors</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BA.5.2"</span>, table <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co"># ancestors &lt;- pullAncestors(cachedatNET, "BA.5.2", table = FALSE)</span></span>
+<span></span>
 <span><span class="va">ancestors</span></span></code></pre></div>
 <pre><code><span><span class="co">##                        levelName</span></span>
 <span><span class="co">## 1 MRCA                          </span></span>
@@ -545,9 +448,9 @@ in the table as these break the network and are removed</li>
 <span><span class="co">## 7                      °--BA.5.2</span></span></code></pre>
 </div>
 <div class="section level3">
-<h3 id="table">Table<a class="anchor" aria-label="anchor" href="#table"></a>
+<h3 id="table-1">Table<a class="anchor" aria-label="anchor" href="#table-1"></a>
 </h3>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ancestors</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullAncestors.html">pullAncestors</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BA.5.2"</span>, table <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">ancestors</span></span></code></pre></div>
 <pre><code><span><span class="co">##                        levelName level   lineage</span></span>
@@ -562,7 +465,7 @@ in the table as these break the network and are removed</li>
 <div class="section level3">
 <h3 id="vector">Vector<a class="anchor" aria-label="anchor" href="#vector"></a>
 </h3>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># vector supersedes table param</span></span>
 <span><span class="va">ancestors</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullAncestors.html">pullAncestors</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BA.5.2"</span>, table <span class="op">=</span> <span class="cn">TRUE</span>, vector <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">ancestors</span></span></code></pre></div>
@@ -574,17 +477,17 @@ in the table as these break the network and are removed</li>
 <h2 id="get-all-the-descendants-of-a-node">Get all the Descendants of a Node<a class="anchor" aria-label="anchor" href="#get-all-the-descendants-of-a-node"></a>
 </h2>
 <div class="section level3">
-<h3 id="network-1">Network<a class="anchor" aria-label="anchor" href="#network-1"></a>
+<h3 id="network-2">Network<a class="anchor" aria-label="anchor" href="#network-2"></a>
 </h3>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/getDescendants.html">getDescendants</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BF.7"</span>, table <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a8872a71fd6a737acd55" style="width:700px;height:432.632880098888px;"></div>
-<script type="application/json" data-for="htmlwidget-a8872a71fd6a737acd55">{"x":{"diagram":"digraph {\n\n\n\n\n  \"1\" [label = \"BF.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"BF.7.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"BF.7.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"BF.7.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"BF.7.4\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"BF.7.4.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"BF.7.4.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"BF.7.4.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"BF.7.5\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"BF.7.5.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"BF.7.6\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"BF.7.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"BF.7.8\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"BF.7.9\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"BF.7.10\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"BF.7.11\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"BF.7.12\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"BF.7.13\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"BF.7.13.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"BF.7.13.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"BF.7.14\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"22\" [label = \"BF.7.14.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"23\" [label = \"BF.7.14.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"24\" [label = \"BF.7.14.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"25\" [label = \"BF.7.14.4\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"26\" [label = \"BF.7.14.5\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"27\" [label = \"BF.7.14.6\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"28\" [label = \"BF.7.14.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"29\" [label = \"BF.7.15\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"30\" [label = \"BF.7.16\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"31\" [label = \"BF.7.16.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"32\" [label = \"BF.7.17\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"33\" [label = \"BF.7.18\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"34\" [label = \"BF.7.19\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"35\" [label = \"BF.7.19.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"36\" [label = \"BF.7.20\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"37\" [label = \"BF.7.21\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"38\" [label = \"BF.7.22\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"39\" [label = \"BF.7.23\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"40\" [label = \"BF.7.24\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"41\" [label = \"BF.7.26\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"42\" [label = \"BF.7.27\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"1\"->\"3\" \n  \"1\"->\"4\" \n  \"1\"->\"5\" \n  \"1\"->\"9\" \n  \"1\"->\"11\" \n  \"1\"->\"12\" \n  \"1\"->\"13\" \n  \"1\"->\"14\" \n  \"1\"->\"15\" \n  \"1\"->\"16\" \n  \"1\"->\"17\" \n  \"1\"->\"18\" \n  \"1\"->\"21\" \n  \"1\"->\"29\" \n  \"1\"->\"30\" \n  \"1\"->\"32\" \n  \"1\"->\"33\" \n  \"1\"->\"34\" \n  \"1\"->\"36\" \n  \"1\"->\"37\" \n  \"1\"->\"38\" \n  \"1\"->\"39\" \n  \"1\"->\"40\" \n  \"1\"->\"41\" \n  \"1\"->\"42\" \n  \"5\"->\"6\" \n  \"5\"->\"7\" \n  \"5\"->\"8\" \n  \"9\"->\"10\" \n  \"18\"->\"19\" \n  \"18\"->\"20\" \n  \"21\"->\"22\" \n  \"21\"->\"23\" \n  \"21\"->\"24\" \n  \"21\"->\"25\" \n  \"21\"->\"26\" \n  \"21\"->\"27\" \n  \"21\"->\"28\" \n  \"30\"->\"31\" \n  \"34\"->\"35\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-191853e19dd49668eff7" style="width:700px;height:432.632880098888px;"></div>
+<script type="application/json" data-for="htmlwidget-191853e19dd49668eff7">{"x":{"diagram":"digraph {\n\n\n\n\n  \"1\" [label = \"BF.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"BF.7.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"BF.7.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"BF.7.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"BF.7.4\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"BF.7.4.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"BF.7.4.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"BF.7.4.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"BF.7.5\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"BF.7.5.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"BF.7.6\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"BF.7.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"BF.7.8\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"BF.7.9\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"BF.7.10\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"BF.7.11\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"BF.7.12\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"BF.7.13\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"BF.7.13.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"BF.7.13.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"BF.7.14\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"22\" [label = \"BF.7.14.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"23\" [label = \"BF.7.14.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"24\" [label = \"BF.7.14.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"25\" [label = \"BF.7.14.4\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"26\" [label = \"BF.7.14.5\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"27\" [label = \"BF.7.14.6\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"28\" [label = \"BF.7.14.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"29\" [label = \"BF.7.15\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"30\" [label = \"BF.7.16\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"31\" [label = \"BF.7.16.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"32\" [label = \"BF.7.17\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"33\" [label = \"BF.7.18\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"34\" [label = \"BF.7.19\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"35\" [label = \"BF.7.19.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"36\" [label = \"BF.7.20\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"37\" [label = \"BF.7.21\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"38\" [label = \"BF.7.22\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"39\" [label = \"BF.7.23\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"40\" [label = \"BF.7.24\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"41\" [label = \"BF.7.26\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"42\" [label = \"BF.7.27\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"1\"->\"3\" \n  \"1\"->\"4\" \n  \"1\"->\"5\" \n  \"1\"->\"9\" \n  \"1\"->\"11\" \n  \"1\"->\"12\" \n  \"1\"->\"13\" \n  \"1\"->\"14\" \n  \"1\"->\"15\" \n  \"1\"->\"16\" \n  \"1\"->\"17\" \n  \"1\"->\"18\" \n  \"1\"->\"21\" \n  \"1\"->\"29\" \n  \"1\"->\"30\" \n  \"1\"->\"32\" \n  \"1\"->\"33\" \n  \"1\"->\"34\" \n  \"1\"->\"36\" \n  \"1\"->\"37\" \n  \"1\"->\"38\" \n  \"1\"->\"39\" \n  \"1\"->\"40\" \n  \"1\"->\"41\" \n  \"1\"->\"42\" \n  \"5\"->\"6\" \n  \"5\"->\"7\" \n  \"5\"->\"8\" \n  \"9\"->\"10\" \n  \"18\"->\"19\" \n  \"18\"->\"20\" \n  \"21\"->\"22\" \n  \"21\"->\"23\" \n  \"21\"->\"24\" \n  \"21\"->\"25\" \n  \"21\"->\"26\" \n  \"21\"->\"27\" \n  \"21\"->\"28\" \n  \"30\"->\"31\" \n  \"34\"->\"35\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="section level3">
-<h3 id="table-1">Table<a class="anchor" aria-label="anchor" href="#table-1"></a>
+<h3 id="table-2">Table<a class="anchor" aria-label="anchor" href="#table-2"></a>
 </h3>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/getDescendants.html">getDescendants</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BF.7"</span>, table <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##            levelName level   lineage</span></span>
 <span><span class="co">## 1  BF.7                  1      BF.7</span></span>
@@ -633,7 +536,7 @@ in the table as these break the network and are removed</li>
 <div class="section level3">
 <h3 id="vector-1">Vector<a class="anchor" aria-label="anchor" href="#vector-1"></a>
 </h3>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># vector supersedes table param</span></span>
 <span><span class="fu"><a href="../reference/getDescendants.html">getDescendants</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BF.7"</span>, table <span class="op">=</span> <span class="cn">TRUE</span>, vector <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##  [1] "BF.7"      "BF.7.1"    "BF.7.2"    "BF.7.3"    "BF.7.4"    "BF.7.4.1" </span></span>
@@ -648,14 +551,14 @@ in the table as these break the network and are removed</li>
 <div class="section level2">
 <h2 id="make-yaml-watchlist-for-augur">Make YAML Watchlist (for Augur)<a class="anchor" aria-label="anchor" href="#make-yaml-watchlist-for-augur"></a>
 </h2>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/getDescendants.html">getDescendants</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BF.7"</span>, vector <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="../reference/makeWatchlist.html">makeWatchlist</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "[ 'BF.7', 'BF.7.1', 'BF.7.2', 'BF.7.3', 'BF.7.4', 'BF.7.4.1', 'BF.7.4.2', 'BF.7.4.3', 'BF.7.5', 'BF.7.5.1', 'BF.7.6', 'BF.7.7', 'BF.7.8', 'BF.7.9', 'BF.7.10', 'BF.7.11', 'BF.7.12', 'BF.7.13', 'BF.7.13.1', 'BF.7.13.2', 'BF.7.14', 'BF.7.14.1', 'BF.7.14.2', 'BF.7.14.3', 'BF.7.14.4', 'BF.7.14.5', 'BF.7.14.6', 'BF.7.14.7', 'BF.7.15', 'BF.7.16', 'BF.7.16.1', 'BF.7.17', 'BF.7.18', 'BF.7.19', 'BF.7.19.1', 'BF.7.20', 'BF.7.21', 'BF.7.22', 'BF.7.23', 'BF.7.24', 'BF.7.26', 'BF.7.27' ]"</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="download-variants-table-from-covariants">Download Variants table from CoVariants<a class="anchor" aria-label="anchor" href="#download-variants-table-from-covariants"></a>
 </h2>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">vars</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getVariants.html">getVariants</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">vars</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 34 × 3</span></span></span>
@@ -676,7 +579,7 @@ in the table as these break the network and are removed</li>
 <div class="section level2">
 <h2 id="expand-variants-table-to-include-all-children">Expand Variants Table to Include all Children<a class="anchor" aria-label="anchor" href="#expand-variants-table-to-include-all-children"></a>
 </h2>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/expandChildren.html">expandChildren</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">vars</span><span class="op">)</span>, <span class="va">ll</span><span class="op">$</span><span class="va">network</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Joining with `by = join_by(lineage)`</span></span></code></pre>
 <pre><code><span><span class="co">##       lineage      child           clade     who</span></span>
