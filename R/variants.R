@@ -7,7 +7,7 @@
 #' @export
 #'
 getVariants <-
-  function(variants_url = "https://raw.githubusercontent.com/hodcroftlab/covariants/master/web/data/nameTable.json") {
+  function(variants_url = "https://raw.githubusercontent.com/hodcroftlab/covariants/master/web/public/data/nameTable.json") {
     ## Get Data and test for errors
     v.raw <-
       tryCatch(
