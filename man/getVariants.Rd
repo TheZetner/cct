@@ -6,7 +6,7 @@
 \usage{
 getVariants(
   variants_url =
-    "https://raw.githubusercontent.com/hodcroftlab/covariants/master/web/data/nameTable.json"
+    "https://raw.githubusercontent.com/hodcroftlab/covariants/master/web/public/data/nameTable.json"
 )
 }
 \arguments{
