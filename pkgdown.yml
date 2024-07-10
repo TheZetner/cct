@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   hierarchyfuncs: hierarchyfuncs.html
   usingcctfunctions: usingcctfunctions.html
-last_built: 2024-07-10T16:07Z
+last_built: 2024-07-10T16:17Z
 urls:
   reference: https://thezetner.github.io/cct/reference
   article: https://thezetner.github.io/cct/articles
