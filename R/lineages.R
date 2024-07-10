@@ -258,22 +258,25 @@ fromDFtoNetwork <- function(x) {
 #' Get a lineages ancestors out of a `fromDFtoNetwork()`node network.
 #' Vector being TRUE supersedes table being TRUE.
 #' Default return node network.
+#' Nodes not found result in NULL, empty string, or empty df of levelName/level/label depending on output being network/vector/table
 #'
 #' @param x node network produce by `fromDFtoNetwork()`
 #' @param node_name Lineage of interest ie. "BA.1"
 #' @param table logical, return subtree or dataframe of level/lineage
 #' @param vector logical, return vector  of lineage names
+#' @param label character, data column to pull, use "name" for levelName
 #'
-#' @return one of two options depending on table param
+#' @return one of two options depending on table/vector params
 #'  - a Node class network object of the nodes leading to node_name
 #'  - a table from the node network with level and lineage names
-#'  - a vector of lineage names
+#'  - a vector of lineage/node names
 #' @export
 pullAncestors <-
   function(x,
            node_name,
            table = FALSE,
-           vector = FALSE) {
+           vector = FALSE,
+           label = "lineage") {
     initial_node <- data.tree::FindNode(x, node_name)
 
     # Export Subtree up to initial_node
@@ -285,20 +288,30 @@ pullAncestors <-
     } else {
       if (vector) {
         # Return vector of lineages
-        initial_node$path
-      } else {
-        # Build DF from tree
-        new_tree <-
-          data.tree::as.Node(data.frame(pathString = initial_node$pathString)) %>%
-          data.tree::ToDataFrameTree(
-            "level",
-            "lineage"
-          )
-        new_tree$lineage <- stringr::str_split_1(initial_node$pathString, "/")
-        # Return empty dataframe instead of null
-        if (purrr::is_null(new_tree)) {
-          data.frame(level = numeric(), lineage = character())
+        if (is.null(initial_node$path)) {
+          # Return empty string if node not found
+          message("Node not found")
+          return("")
         } else {
+          initial_node$path
+        }
+
+      } else {
+        if (is.null(initial_node$path)) {
+          # Return empty table if node not found
+          message("Node not found")
+          df <- data.frame(levelName = character(), level = numeric(), col = character())
+          names(df) <- c("levelName", "level", label)
+          df
+        } else {
+          # Build DF from tree
+          new_tree <-
+            data.tree::as.Node(data.frame(pathString = initial_node$pathString)) %>%
+            data.tree::ToDataFrameTree(
+              "level",
+              label
+            )
+          new_tree$lineage <- stringr::str_split_1(initial_node$pathString, "/")
           new_tree
         }
       }
@@ -310,39 +323,51 @@ pullAncestors <-
 #' Get a lineage's descendants out of a `fromDFtoNetwork()`node network.
 #' Vector being TRUE supersedes table being TRUE.
 #' Default return node network.
+#' Nodes not found result in NULL, empty string, or empty df of levelName/level/label depending on output being network/vector/table
 #'
 #' @param x node network produce by `fromDFtoNetwork()`
 #' @param node_name Lineage of interest ie. "BA.1"
 #' @param table logical, return tree as dataframe of level/lineage
 #' @param vector logical, return vector  of lineage names
+#' @param label character, data column to pull, use "name" for network levelName, will error if incorrect
 #'
-#' @return one of three options depending on table and vector params
+#' @return one of three options depending on table/vector params
 #'  - a Node class network object of the nodes beneath node_name
 #'  - a table from the node network with level and lineage names
-#'  - a vector of lineage names
+#'  - a vector of lineage/node names
 #'
 #' @export
 getDescendants <-
   function(x,
            node_name,
            table = FALSE,
-           vector = FALSE) {
+           vector = FALSE,
+           label = "lineage") {
     new_tree <- data.tree::FindNode(x, node_name)
 
     if (!vector && !table) {
       new_tree
     } else {
       # Build DF from tree
-      new_tree <- new_tree %>% data.tree::ToDataFrameTree("level", "lineage")
+      new_tree <- new_tree %>% data.tree::ToDataFrameTree("level", label)
       if (vector) {
         # Return vector of lineages
-        new_tree %>%
-          dplyr::pull("lineage") %>%
-          return()
+        if (nrow(new_tree) == 0) {
+          # Return empty string if node not found
+          message("Node not found")
+          return("")
+        } else {
+          new_tree %>%
+            dplyr::pull(label) %>%
+            return()
+        }
       } else {
-        # Return empty dataframe instead of null
-        if (purrr::is_null(new_tree)) {
-          data.frame(level = numeric(), lineage = character())
+        # Return empty dataframe instead of null if node not found
+        if (nrow(new_tree) == 0) {
+          message("Node not found")
+          df <- data.frame(levelName = character(), level = numeric(), col = character())
+          names(df) <- c("levelName", "level", label)
+          df
         } else {
           new_tree
         }
