@@ -258,13 +258,13 @@ fromDFtoNetwork <- function(x) {
 #' Get a lineages ancestors out of a `fromDFtoNetwork()`node network.
 #' Vector being TRUE supersedes table being TRUE.
 #' Default return node network.
-#' Nodes not found result in NULL, empty string, or empty df of levelName/level/label depending on output being network/vector/table
+#' Nodes not found result in NULL, empty string, or empty df of levelName/level/attribute depending on output being network/vector/table
 #'
 #' @param x node network produce by `fromDFtoNetwork()`
 #' @param node_name Lineage of interest ie. "BA.1"
 #' @param table logical, return subtree or dataframe of level/lineage
 #' @param vector logical, return vector  of lineage names
-#' @param label character, data column to pull, use "name" for levelName
+#' @param attribute character, metadata attribute to use for table/vector output, use "name" for levelName
 #'
 #' @return one of two options depending on table/vector params
 #'  - a Node class network object of the nodes leading to node_name
@@ -276,7 +276,7 @@ pullAncestors <-
            node_name,
            table = FALSE,
            vector = FALSE,
-           label = "lineage") {
+           attribute = "lineage") {
     initial_node <- data.tree::FindNode(x, node_name)
 
     # Export Subtree up to initial_node
@@ -301,7 +301,7 @@ pullAncestors <-
           # Return empty table if node not found
           message("Node not found")
           df <- data.frame(levelName = character(), level = numeric(), col = character())
-          names(df) <- c("levelName", "level", label)
+          names(df) <- c("levelName", "level", attribute)
           df
         } else {
           # Build DF from tree
@@ -309,9 +309,8 @@ pullAncestors <-
             data.tree::as.Node(data.frame(pathString = initial_node$pathString)) %>%
             data.tree::ToDataFrameTree(
               "level",
-              label
+              attribute
             )
-          new_tree$lineage <- stringr::str_split_1(initial_node$pathString, "/")
           new_tree
         }
       }
@@ -323,13 +322,13 @@ pullAncestors <-
 #' Get a lineage's descendants out of a `fromDFtoNetwork()`node network.
 #' Vector being TRUE supersedes table being TRUE.
 #' Default return node network.
-#' Nodes not found result in NULL, empty string, or empty df of levelName/level/label depending on output being network/vector/table
+#' Nodes not found result in NULL, empty string, or empty df of levelName/level/attribute depending on output being network/vector/table
 #'
 #' @param x node network produce by `fromDFtoNetwork()`
 #' @param node_name Lineage of interest ie. "BA.1"
 #' @param table logical, return tree as dataframe of level/lineage
 #' @param vector logical, return vector  of lineage names
-#' @param label character, data column to pull, use "name" for network levelName, will error if incorrect
+#' @param attribute character, metadata attribute to use for table/vector output, use "name" for levelName
 #'
 #' @return one of three options depending on table/vector params
 #'  - a Node class network object of the nodes beneath node_name
@@ -342,14 +341,14 @@ getDescendants <-
            node_name,
            table = FALSE,
            vector = FALSE,
-           label = "lineage") {
+           attribute = "lineage") {
     new_tree <- data.tree::FindNode(x, node_name)
 
     if (!vector && !table) {
       new_tree
     } else {
       # Build DF from tree
-      new_tree <- new_tree %>% data.tree::ToDataFrameTree("level", label)
+      new_tree <- new_tree %>% data.tree::ToDataFrameTree("level", attribute)
       if (vector) {
         # Return vector of lineages
         if (nrow(new_tree) == 0) {
@@ -358,7 +357,7 @@ getDescendants <-
           return("")
         } else {
           new_tree %>%
-            dplyr::pull(label) %>%
+            dplyr::pull(attribute) %>%
             return()
         }
       } else {
@@ -366,7 +365,7 @@ getDescendants <-
         if (nrow(new_tree) == 0) {
           message("Node not found")
           df <- data.frame(levelName = character(), level = numeric(), col = character())
-          names(df) <- c("levelName", "level", label)
+          names(df) <- c("levelName", "level", attribute)
           df
         } else {
           new_tree

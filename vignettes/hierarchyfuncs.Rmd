@@ -47,11 +47,12 @@ cachedatNET <- checkCache(network = TRUE)
 
 
 ## Run All in One Line
-- Building this documentation at a time when the master file is broken so linking specifically to my own
 
 ```{r}
+# In case newest version breaks use: lineages_url = "https://raw.githubusercontent.com/TheZetner/pango-designation/master/lineage_notes.txt"
+
 hierarchy <-
-  CCT::updateHierarchies(lineages_url = "https://raw.githubusercontent.com/TheZetner/pango-designation/master/lineage_notes.txt") %>% CCT::fromDFtoNetwork()
+  CCT::updateHierarchies() %>% CCT::fromDFtoNetwork()
 
 hierarchy
 ```
@@ -102,7 +103,6 @@ ancestors <- pullAncestors(ll$network, "BA.5.2", table = TRUE, vector = TRUE)
 ancestors
 ```
 
-
 ## Get all the Descendants of a Node
 
 ### Network
@@ -121,12 +121,10 @@ getDescendants(ll$network, "BF.7", table = TRUE)
 getDescendants(ll$network, "BF.7", table = TRUE, vector = TRUE)
 ```
 
-
 ## Make YAML Watchlist (for Augur)
 ```{r}
 getDescendants(ll$network, "BF.7", vector = TRUE) %>% makeWatchlist()
 ```
-
 
 ## Download Variants table from CoVariants
 ```{r}
@@ -134,8 +132,103 @@ vars <- getVariants()
 vars
 ```
 
-
 ## Expand Variants Table to Include all Children
 ```{r}
 expandChildren(head(vars), ll$network)
 ```
+
+# Custom Hierarchies
+- CCT can also examine custom hierarchies for descendants and ancestors
+- This capacity is limited at the moment but can easily provide the same functionality as above to work with yaml-defined hierarchies.
+
+## Create a Randomly Nested YAML
+```{r ch1}
+# Random YAML
+yaml <- "fruit:\n"
+depth <- ""
+maxdepth <- 1
+deepest <- stringr::fruit[1]
+for(i in stringr::fruit){
+  flip <- round(runif(1, 0, 1))
+  if(flip == 1){
+    flip <- round(runif(1, 0, 1))
+    if(flip == 1){
+      depth <- paste0(depth, "  ")
+      if(stringr::str_count(depth, "  ") > maxdepth){
+        maxdepth <- stringr::str_count(depth, "  ")
+        deepest <- i
+      }
+    }
+  }else{
+    depth <- "  "
+  }
+  yaml <- paste0(yaml,
+                 paste0(depth, i, ":\n"))
+}
+cat(yaml)
+```
+
+Now that the hierarchy is defined in the above yaml text we can load it and convert it into a data.tree node network. A YAML file can also be supplied using the commented text.
+
+```{r ch2}
+
+# To load a file
+# yaml::read_yaml(yaml) %>%
+#   data.tree::as.Node(interpretNullAsList = TRUE)
+
+hier <- yaml::yaml.load(yaml) %>%
+  data.tree::as.Node(interpretNullAsList = TRUE)
+
+str(hier)
+
+```
+
+The deepest element of that fake yaml is **`r deepest`** let's use that as an example.
+
+## Examining the Custom Hierarchy
+
+Pull ancestors of deepest and return a node.
+```{r ch3}
+y <- pullAncestors(x = hier, 
+              node_name = deepest)
+
+str(y)
+```
+
+Print it (looks like a table)
+```{r ch4}
+y
+```
+
+Return an actual table. Note the lineage column of `NA`.
+```{r ch5}
+y <- pullAncestors(x = hier, 
+              node_name = deepest,
+              table = T)
+y
+```
+
+The attribute parameter is used to query the data in `pullAncestors` and can refer to any built in attributes of the [data.tree node network](https://cran.r-project.org/web/packages/data.tree/data.tree.pdf) or custom metadata.
+```{r ch6}
+y <- pullAncestors(x = hier, 
+              node_name = deepest,
+              table = T,
+              attribute = "name")
+y
+```
+
+
+```{r ch7}
+v <- pullAncestors(x = hier, 
+              node_name = deepest,
+              vector = T,
+              attribute = "name")
+v
+```
+
+Get descendants in a similar way as above.
+```{r ch8}
+getDescendants(hier, v[3], attribute = "name")
+
+```
+

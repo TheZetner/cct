@@ -1,6 +1,6 @@
 Package: CCT
 Title: Common Covid Tasks
-Version: 0.6.9000
+Version: 0.7.0
 Authors@R: 
     person(given = "Adrian",
            family = "Zetner",
