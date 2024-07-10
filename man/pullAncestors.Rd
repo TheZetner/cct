@@ -4,7 +4,13 @@
 \alias{pullAncestors}
 \title{Pull Ancestors from a Specific Lineage}
 \usage{
-pullAncestors(x, node_name, table = FALSE, vector = FALSE)
+pullAncestors(
+  x,
+  node_name,
+  table = FALSE,
+  vector = FALSE,
+  attribute = "lineage"
+)
 }
 \arguments{
 \item{x}{node network produce by \code{fromDFtoNetwork()}}
@@ -14,17 +20,20 @@ pullAncestors(x, node_name, table = FALSE, vector = FALSE)
 \item{table}{logical, return subtree or dataframe of level/lineage}
 
 \item{vector}{logical, return vector  of lineage names}
+
+\item{attribute}{character, metadata attribute to use for table/vector output, use "name" for levelName}
 }
 \value{
-one of two options depending on table param
+one of two options depending on table/vector params
 \itemize{
 \item a Node class network object of the nodes leading to node_name
 \item a table from the node network with level and lineage names
-\item a vector of lineage names
+\item a vector of lineage/node names
 }
 }
 \description{
 Get a lineages ancestors out of a \code{fromDFtoNetwork()}node network.
 Vector being TRUE supersedes table being TRUE.
 Default return node network.
+Nodes not found result in NULL, empty string, or empty df of levelName/level/attribute depending on output being network/vector/table
 }
