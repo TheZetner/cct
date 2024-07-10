@@ -5,83 +5,71 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="CCT">
 <title>CCT Hierarchy Functions • CCT</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="CCT Hierarchy Functions">
-<meta property="og:description" content="CCT">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="CCT Hierarchy Functions">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
-    
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
-    
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+
     <a class="navbar-brand me-2" href="../index.html">CCT</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.0</small>
 
-    
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item">
-  <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="active nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
-  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/hierarchyfuncs.html">CCT Hierarchy Functions</a>
-    <a class="dropdown-item" href="../articles/usingcctfunctions.html">Using CCT Functions</a>
-  </div>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
+<li><a class="dropdown-item" href="../articles/hierarchyfuncs.html">CCT Hierarchy Functions</a></li>
+    <li><a class="dropdown-item" href="../articles/usingcctfunctions.html">Using CCT Functions</a></li>
+  </ul>
 </li>
       </ul>
-<form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
-</form>
-
-      <ul class="navbar-nav">
-<li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/TheZetner/cct/" aria-label="github">
-    <span class="fab fa fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
+</form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/TheZetner/cct/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
-    
+
   </div>
 </nav><div class="container template-article">
 
 
 
+<link href="hierarchyfuncs_files/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="hierarchyfuncs_files/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="hierarchyfuncs_files/viz-1.8.2/viz.js"></script><link href="hierarchyfuncs_files/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-<script src="hierarchyfuncs_files/grViz-binding-1.0.10/grViz.js"></script><div class="row">
+<script src="hierarchyfuncs_files/grViz-binding-1.0.11/grViz.js"></script><div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="" class="logo" alt=""><h1>CCT Hierarchy Functions</h1>
+
+      <h1>CCT Hierarchy Functions</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/TheZetner/cct/blob/HEAD/vignettes/hierarchyfuncs.Rmd" class="external-link"><code>vignettes/hierarchyfuncs.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/TheZetner/cct/blob/main/vignettes/hierarchyfuncs.Rmd" class="external-link"><code>vignettes/hierarchyfuncs.Rmd</code></a></small>
       <div class="d-none name"><code>hierarchyfuncs.Rmd</code></div>
     </div>
 
     
     
-<div class="section level2">
-<h2 id="load-from-cache-update-if-new-lineages-found-or-create-cache-if-missing">Load from Cache, Update if New Lineages Found or Create Cache if
+<div class="section level3">
+<h3 id="load-from-cache-update-if-new-lineages-found-or-create-cache-if-missing">Load from Cache, Update if New Lineages Found or Create Cache if
 Missing<a class="anchor" aria-label="anchor" href="#load-from-cache-update-if-new-lineages-found-or-create-cache-if-missing"></a>
-</h2>
+</h3>
 <ul>
 <li>Cache is written to a basic ‘rda’ file in the user’s local AppData
 directory</li>
@@ -97,9 +85,9 @@ specified regardless of how it compares to the cache</li>
 data.tree network with <code>network = TRUE</code>
 </li>
 </ul>
-<div class="section level3">
-<h3 id="table">Table<a class="anchor" aria-label="anchor" href="#table"></a>
-</h3>
+<div class="section level4">
+<h4 id="table">Table<a class="anchor" aria-label="anchor" href="#table"></a>
+</h4>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/TheZetner/cct" class="external-link">CCT</a></span><span class="op">)</span></span>
 <span><span class="co"># Grab an older version</span></span>
@@ -128,18 +116,18 @@ data.tree network with <code>network = TRUE</code>
 <pre><code><span><span class="co">## Check current status of remote files</span></span></code></pre>
 <pre><code><span><span class="co">## Joining with `by = join_by(lineage, parent, children)`</span></span>
 <span><span class="co">## Lineages list differs from cached, updating lineage hierarchies</span></span>
-<span><span class="co">## 10761</span></span>
+<span><span class="co">## 14178</span></span>
 <span><span class="co">## Overwriting ~/.local/share/CCT/cct_cache.rda with new lineage hierarchies</span></span>
 <span><span class="co">## Returning lineage hierarchies as...</span></span>
 <span><span class="co">## Table</span></span></code></pre>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># how many lineages?</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">cachedat</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## [1] 21828</span></span></code></pre>
+<pre><code><span><span class="co">## [1] 25245</span></span></code></pre>
 </div>
-<div class="section level3">
-<h3 id="network">Network<a class="anchor" aria-label="anchor" href="#network"></a>
-</h3>
+<div class="section level4">
+<h4 id="network">Network<a class="anchor" aria-label="anchor" href="#network"></a>
+</h4>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cachedatNET</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/checkCache.html">checkCache</a></span><span class="op">(</span>network <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Loading and checking cache file: ~/.local/share/CCT/cct_cache.rda</span></span></code></pre>
@@ -150,16 +138,14 @@ data.tree network with <code>network = TRUE</code>
 <span><span class="co">## Joining with `by = join_by(lineage, parent)`</span></span></code></pre>
 </div>
 </div>
-<div class="section level2">
-<h2 id="run-all-in-one-line">Run All in One Line<a class="anchor" aria-label="anchor" href="#run-all-in-one-line"></a>
-</h2>
-<ul>
-<li>Building this documentation at a time when the master file is broken
-so linking specifically to my own</li>
-</ul>
+<div class="section level3">
+<h3 id="run-all-in-one-line">Run All in One Line<a class="anchor" aria-label="anchor" href="#run-all-in-one-line"></a>
+</h3>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">hierarchy</span> <span class="op">&lt;-</span></span>
-<span>  <span class="fu">CCT</span><span class="fu">::</span><span class="fu"><a href="../reference/updateHierarchies.html">updateHierarchies</a></span><span class="op">(</span>lineages_url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/TheZetner/pango-designation/master/lineage_notes.txt"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu">CCT</span><span class="fu">::</span><span class="fu"><a href="../reference/fromDFtoNetwork.html">fromDFtoNetwork</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># In case newest version breaks use: lineages_url = "https://raw.githubusercontent.com/TheZetner/pango-designation/master/lineage_notes.txt"</span></span>
+<span></span>
+<span><span class="va">hierarchy</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">CCT</span><span class="fu">::</span><span class="fu"><a href="../reference/updateHierarchies.html">updateHierarchies</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu">CCT</span><span class="fu">::</span><span class="fu"><a href="../reference/fromDFtoNetwork.html">fromDFtoNetwork</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Joining with `by = join_by(lineage, parent)`</span></span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hierarchy</span></span></code></pre></div>
@@ -264,18 +250,18 @@ so linking specifically to my own</li>
 <span><span class="co">## 97   ¦   ¦   ¦   ¦   ¦--Q.7                  </span></span>
 <span><span class="co">## 98   ¦   ¦   ¦   ¦   °--Q.8                  </span></span>
 <span><span class="co">## 99   ¦   ¦   ¦   ¦--B.1.1.8                  </span></span>
-<span><span class="co">## 100  ¦   ¦   ¦   °--... 402 nodes w/ 1087 sub</span></span>
-<span><span class="co">## 101  ¦   ¦   °--... 455 nodes w/ 1984 sub    </span></span>
-<span><span class="co">## 102  ¦   °--... 46 nodes w/ 2454 sub         </span></span>
-<span><span class="co">## 103  °--... 76 nodes w/ 3089 sub             </span></span>
+<span><span class="co">## 100  ¦   ¦   ¦   °--... 402 nodes w/ 1467 sub</span></span>
+<span><span class="co">## 101  ¦   ¦   °--... 455 nodes w/ 2363 sub    </span></span>
+<span><span class="co">## 102  ¦   °--... 46 nodes w/ 2833 sub         </span></span>
+<span><span class="co">## 103  °--... 117 nodes w/ 3917 sub            </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## $orphans</span></span>
 <span><span class="co">## [1] lineage parent </span></span>
 <span><span class="co">## &lt;0 rows&gt; (or 0-length row.names)</span></span></code></pre>
 </div>
-<div class="section level2">
-<h2 id="update-hierarchies">Update Hierarchies<a class="anchor" aria-label="anchor" href="#update-hierarchies"></a>
-</h2>
+<div class="section level3">
+<h3 id="update-hierarchies">Update Hierarchies<a class="anchor" aria-label="anchor" href="#update-hierarchies"></a>
+</h3>
 <ul>
 <li>Lineages: <a href="https://github.com/cov-lineages/pango-designation/blob/master/lineage_notes.txt" class="external-link uri">https://github.com/cov-lineages/pango-designation/blob/master/lineage_notes.txt</a>
 </li>
@@ -297,9 +283,9 @@ so linking specifically to my own</li>
 <span><span class="co">## 5        A   &lt;NA&gt;      A.2</span></span>
 <span><span class="co">## 44   A.2.2    A.2    A.2.2</span></span></code></pre>
 </div>
-<div class="section level2">
-<h2 id="from-dataframe-to-network">From Dataframe to Network<a class="anchor" aria-label="anchor" href="#from-dataframe-to-network"></a>
-</h2>
+<div class="section level3">
+<h3 id="from-dataframe-to-network">From Dataframe to Network<a class="anchor" aria-label="anchor" href="#from-dataframe-to-network"></a>
+</h3>
 <ul>
 <li>Take the dataframe from <code><a href="../reference/updateHierarchies.html">updateHierarchies()</a></code> or
 <code>checkCache(network = FALSE)</code> and build a node network using
@@ -427,12 +413,12 @@ from above</li>
 <span><span class="co">## [1] lineage parent </span></span>
 <span><span class="co">## &lt;0 rows&gt; (or 0-length row.names)</span></span></code></pre>
 </div>
-<div class="section level2">
-<h2 id="pull-all-the-ancestors-of-a-node">Pull all the Ancestors of a Node<a class="anchor" aria-label="anchor" href="#pull-all-the-ancestors-of-a-node"></a>
-</h2>
 <div class="section level3">
-<h3 id="network-1">Network<a class="anchor" aria-label="anchor" href="#network-1"></a>
+<h3 id="pull-all-the-ancestors-of-a-node">Pull all the Ancestors of a Node<a class="anchor" aria-label="anchor" href="#pull-all-the-ancestors-of-a-node"></a>
 </h3>
+<div class="section level4">
+<h4 id="network-1">Network<a class="anchor" aria-label="anchor" href="#network-1"></a>
+</h4>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ancestors</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullAncestors.html">pullAncestors</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BA.5.2"</span>, table <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="co"># ancestors &lt;- pullAncestors(cachedatNET, "BA.5.2", table = FALSE)</span></span>
@@ -447,24 +433,24 @@ from above</li>
 <span><span class="co">## 6                  °--BA.5      </span></span>
 <span><span class="co">## 7                      °--BA.5.2</span></span></code></pre>
 </div>
-<div class="section level3">
-<h3 id="table-1">Table<a class="anchor" aria-label="anchor" href="#table-1"></a>
-</h3>
+<div class="section level4">
+<h4 id="table-1">Table<a class="anchor" aria-label="anchor" href="#table-1"></a>
+</h4>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ancestors</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullAncestors.html">pullAncestors</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BA.5.2"</span>, table <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">ancestors</span></span></code></pre></div>
-<pre><code><span><span class="co">##                        levelName level   lineage</span></span>
-<span><span class="co">## 1 MRCA                               1      MRCA</span></span>
-<span><span class="co">## 2  °--B                              2         B</span></span>
-<span><span class="co">## 3      °--B.1                        3       B.1</span></span>
-<span><span class="co">## 4          °--B.1.1                  4     B.1.1</span></span>
-<span><span class="co">## 5              °--B.1.1.529          5 B.1.1.529</span></span>
-<span><span class="co">## 6                  °--BA.5           6      BA.5</span></span>
-<span><span class="co">## 7                      °--BA.5.2     7    BA.5.2</span></span></code></pre>
+<pre><code><span><span class="co">##                        levelName level lineage</span></span>
+<span><span class="co">## 1 MRCA                               1      NA</span></span>
+<span><span class="co">## 2  °--B                              2      NA</span></span>
+<span><span class="co">## 3      °--B.1                        3      NA</span></span>
+<span><span class="co">## 4          °--B.1.1                  4      NA</span></span>
+<span><span class="co">## 5              °--B.1.1.529          5      NA</span></span>
+<span><span class="co">## 6                  °--BA.5           6      NA</span></span>
+<span><span class="co">## 7                      °--BA.5.2     7      NA</span></span></code></pre>
 </div>
-<div class="section level3">
-<h3 id="vector">Vector<a class="anchor" aria-label="anchor" href="#vector"></a>
-</h3>
+<div class="section level4">
+<h4 id="vector">Vector<a class="anchor" aria-label="anchor" href="#vector"></a>
+</h4>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># vector supersedes table param</span></span>
 <span><span class="va">ancestors</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullAncestors.html">pullAncestors</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BA.5.2"</span>, table <span class="op">=</span> <span class="cn">TRUE</span>, vector <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -473,20 +459,20 @@ from above</li>
 <span><span class="co">## [7] "BA.5.2"</span></span></code></pre>
 </div>
 </div>
-<div class="section level2">
-<h2 id="get-all-the-descendants-of-a-node">Get all the Descendants of a Node<a class="anchor" aria-label="anchor" href="#get-all-the-descendants-of-a-node"></a>
-</h2>
 <div class="section level3">
-<h3 id="network-2">Network<a class="anchor" aria-label="anchor" href="#network-2"></a>
+<h3 id="get-all-the-descendants-of-a-node">Get all the Descendants of a Node<a class="anchor" aria-label="anchor" href="#get-all-the-descendants-of-a-node"></a>
 </h3>
+<div class="section level4">
+<h4 id="network-2">Network<a class="anchor" aria-label="anchor" href="#network-2"></a>
+</h4>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/getDescendants.html">getDescendants</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BF.7"</span>, table <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-bbc0057960e6086c7606" style="width:700px;height:432.632880098888px;"></div>
-<script type="application/json" data-for="htmlwidget-bbc0057960e6086c7606">{"x":{"diagram":"digraph {\n\n\n\n\n  \"1\" [label = \"BF.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"BF.7.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"BF.7.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"BF.7.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"BF.7.4\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"BF.7.4.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"BF.7.4.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"BF.7.4.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"BF.7.5\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"BF.7.5.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"BF.7.6\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"BF.7.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"BF.7.8\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"BF.7.9\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"BF.7.10\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"BF.7.11\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"BF.7.12\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"BF.7.13\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"BF.7.13.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"BF.7.13.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"BF.7.14\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"22\" [label = \"BF.7.14.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"23\" [label = \"BF.7.14.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"24\" [label = \"BF.7.14.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"25\" [label = \"BF.7.14.4\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"26\" [label = \"BF.7.14.5\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"27\" [label = \"BF.7.14.6\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"28\" [label = \"BF.7.14.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"29\" [label = \"BF.7.15\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"30\" [label = \"BF.7.16\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"31\" [label = \"BF.7.16.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"32\" [label = \"BF.7.17\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"33\" [label = \"BF.7.18\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"34\" [label = \"BF.7.19\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"35\" [label = \"BF.7.19.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"36\" [label = \"BF.7.20\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"37\" [label = \"BF.7.21\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"38\" [label = \"BF.7.22\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"39\" [label = \"BF.7.23\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"40\" [label = \"BF.7.24\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"41\" [label = \"BF.7.26\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"42\" [label = \"BF.7.27\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"1\"->\"3\" \n  \"1\"->\"4\" \n  \"1\"->\"5\" \n  \"1\"->\"9\" \n  \"1\"->\"11\" \n  \"1\"->\"12\" \n  \"1\"->\"13\" \n  \"1\"->\"14\" \n  \"1\"->\"15\" \n  \"1\"->\"16\" \n  \"1\"->\"17\" \n  \"1\"->\"18\" \n  \"1\"->\"21\" \n  \"1\"->\"29\" \n  \"1\"->\"30\" \n  \"1\"->\"32\" \n  \"1\"->\"33\" \n  \"1\"->\"34\" \n  \"1\"->\"36\" \n  \"1\"->\"37\" \n  \"1\"->\"38\" \n  \"1\"->\"39\" \n  \"1\"->\"40\" \n  \"1\"->\"41\" \n  \"1\"->\"42\" \n  \"5\"->\"6\" \n  \"5\"->\"7\" \n  \"5\"->\"8\" \n  \"9\"->\"10\" \n  \"18\"->\"19\" \n  \"18\"->\"20\" \n  \"21\"->\"22\" \n  \"21\"->\"23\" \n  \"21\"->\"24\" \n  \"21\"->\"25\" \n  \"21\"->\"26\" \n  \"21\"->\"27\" \n  \"21\"->\"28\" \n  \"30\"->\"31\" \n  \"34\"->\"35\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-ac96cb3ee4656e2e9ec3" style="width:700px;height:432.632880098888px;"></div>
+<script type="application/json" data-for="htmlwidget-ac96cb3ee4656e2e9ec3">{"x":{"diagram":"digraph {\n\n\n\n\n  \"1\" [label = \"BF.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"2\" [label = \"BF.7.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"3\" [label = \"BF.7.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"4\" [label = \"BF.7.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"5\" [label = \"BF.7.4\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"6\" [label = \"BF.7.4.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"7\" [label = \"BF.7.4.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"8\" [label = \"BF.7.4.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"9\" [label = \"BF.7.5\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"10\" [label = \"BF.7.5.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"11\" [label = \"BF.7.6\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"12\" [label = \"BF.7.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"13\" [label = \"BF.7.8\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"14\" [label = \"BF.7.9\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"15\" [label = \"BF.7.10\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"16\" [label = \"BF.7.11\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"17\" [label = \"BF.7.12\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"18\" [label = \"BF.7.13\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"19\" [label = \"BF.7.13.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"20\" [label = \"BF.7.13.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"21\" [label = \"BF.7.14\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"22\" [label = \"BF.7.14.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"23\" [label = \"BF.7.14.2\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"24\" [label = \"BF.7.14.3\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"25\" [label = \"BF.7.14.4\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"26\" [label = \"BF.7.14.5\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"27\" [label = \"BF.7.14.6\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"28\" [label = \"BF.7.14.7\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"29\" [label = \"BF.7.15\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"30\" [label = \"BF.7.16\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"31\" [label = \"BF.7.16.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"32\" [label = \"BF.7.17\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"33\" [label = \"BF.7.18\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"34\" [label = \"BF.7.19\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"35\" [label = \"BF.7.19.1\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"36\" [label = \"BF.7.20\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"37\" [label = \"BF.7.21\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"38\" [label = \"BF.7.22\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"39\" [label = \"BF.7.23\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"40\" [label = \"BF.7.24\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"41\" [label = \"BF.7.26\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"42\" [label = \"BF.7.27\", fillcolor = \"#FFFFFF\", fontcolor = \"#000000\"] \n  \"1\"->\"2\" \n  \"1\"->\"3\" \n  \"1\"->\"4\" \n  \"1\"->\"5\" \n  \"1\"->\"9\" \n  \"1\"->\"11\" \n  \"1\"->\"12\" \n  \"1\"->\"13\" \n  \"1\"->\"14\" \n  \"1\"->\"15\" \n  \"1\"->\"16\" \n  \"1\"->\"17\" \n  \"1\"->\"18\" \n  \"1\"->\"21\" \n  \"1\"->\"29\" \n  \"1\"->\"30\" \n  \"1\"->\"32\" \n  \"1\"->\"33\" \n  \"1\"->\"34\" \n  \"1\"->\"36\" \n  \"1\"->\"37\" \n  \"1\"->\"38\" \n  \"1\"->\"39\" \n  \"1\"->\"40\" \n  \"1\"->\"41\" \n  \"1\"->\"42\" \n  \"5\"->\"6\" \n  \"5\"->\"7\" \n  \"5\"->\"8\" \n  \"9\"->\"10\" \n  \"18\"->\"19\" \n  \"18\"->\"20\" \n  \"21\"->\"22\" \n  \"21\"->\"23\" \n  \"21\"->\"24\" \n  \"21\"->\"25\" \n  \"21\"->\"26\" \n  \"21\"->\"27\" \n  \"21\"->\"28\" \n  \"30\"->\"31\" \n  \"34\"->\"35\" \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div class="section level3">
-<h3 id="table-2">Table<a class="anchor" aria-label="anchor" href="#table-2"></a>
-</h3>
+<div class="section level4">
+<h4 id="table-2">Table<a class="anchor" aria-label="anchor" href="#table-2"></a>
+</h4>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/getDescendants.html">getDescendants</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BF.7"</span>, table <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##            levelName level   lineage</span></span>
@@ -533,9 +519,9 @@ from above</li>
 <span><span class="co">## 41  ¦--BF.7.26           2   BF.7.26</span></span>
 <span><span class="co">## 42  °--BF.7.27           2   BF.7.27</span></span></code></pre>
 </div>
-<div class="section level3">
-<h3 id="vector-1">Vector<a class="anchor" aria-label="anchor" href="#vector-1"></a>
-</h3>
+<div class="section level4">
+<h4 id="vector-1">Vector<a class="anchor" aria-label="anchor" href="#vector-1"></a>
+</h4>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># vector supersedes table param</span></span>
 <span><span class="fu"><a href="../reference/getDescendants.html">getDescendants</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BF.7"</span>, table <span class="op">=</span> <span class="cn">TRUE</span>, vector <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
@@ -548,16 +534,16 @@ from above</li>
 <span><span class="co">## [37] "BF.7.21"   "BF.7.22"   "BF.7.23"   "BF.7.24"   "BF.7.26"   "BF.7.27"</span></span></code></pre>
 </div>
 </div>
-<div class="section level2">
-<h2 id="make-yaml-watchlist-for-augur">Make YAML Watchlist (for Augur)<a class="anchor" aria-label="anchor" href="#make-yaml-watchlist-for-augur"></a>
-</h2>
+<div class="section level3">
+<h3 id="make-yaml-watchlist-for-augur">Make YAML Watchlist (for Augur)<a class="anchor" aria-label="anchor" href="#make-yaml-watchlist-for-augur"></a>
+</h3>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/getDescendants.html">getDescendants</a></span><span class="op">(</span><span class="va">ll</span><span class="op">$</span><span class="va">network</span>, <span class="st">"BF.7"</span>, vector <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="../reference/makeWatchlist.html">makeWatchlist</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "[ 'BF.7', 'BF.7.1', 'BF.7.2', 'BF.7.3', 'BF.7.4', 'BF.7.4.1', 'BF.7.4.2', 'BF.7.4.3', 'BF.7.5', 'BF.7.5.1', 'BF.7.6', 'BF.7.7', 'BF.7.8', 'BF.7.9', 'BF.7.10', 'BF.7.11', 'BF.7.12', 'BF.7.13', 'BF.7.13.1', 'BF.7.13.2', 'BF.7.14', 'BF.7.14.1', 'BF.7.14.2', 'BF.7.14.3', 'BF.7.14.4', 'BF.7.14.5', 'BF.7.14.6', 'BF.7.14.7', 'BF.7.15', 'BF.7.16', 'BF.7.16.1', 'BF.7.17', 'BF.7.18', 'BF.7.19', 'BF.7.19.1', 'BF.7.20', 'BF.7.21', 'BF.7.22', 'BF.7.23', 'BF.7.24', 'BF.7.26', 'BF.7.27' ]"</span></span></code></pre>
 </div>
-<div class="section level2">
-<h2 id="download-variants-table-from-covariants">Download Variants table from CoVariants<a class="anchor" aria-label="anchor" href="#download-variants-table-from-covariants"></a>
-</h2>
+<div class="section level3">
+<h3 id="download-variants-table-from-covariants">Download Variants table from CoVariants<a class="anchor" aria-label="anchor" href="#download-variants-table-from-covariants"></a>
+</h3>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">vars</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getVariants.html">getVariants</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">vars</span></span></code></pre></div>
@@ -576,9 +562,9 @@ from above</li>
 <span><span class="co">## <span style="color: #BCBCBC;">10</span> C.37      21G (Lambda)    Lambda </span></span>
 <span><span class="co">## <span style="color: #949494;"># ℹ 27 more rows</span></span></span></code></pre>
 </div>
-<div class="section level2">
-<h2 id="expand-variants-table-to-include-all-children">Expand Variants Table to Include all Children<a class="anchor" aria-label="anchor" href="#expand-variants-table-to-include-all-children"></a>
-</h2>
+<div class="section level3">
+<h3 id="expand-variants-table-to-include-all-children">Expand Variants Table to Include all Children<a class="anchor" aria-label="anchor" href="#expand-variants-table-to-include-all-children"></a>
+</h3>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/expandChildren.html">expandChildren</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">vars</span><span class="op">)</span>, <span class="va">ll</span><span class="op">$</span><span class="va">network</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Joining with `by = join_by(lineage)`</span></span></code></pre>
@@ -869,28 +855,339 @@ from above</li>
 <span><span class="co">## 284 B.1.617.1  B.1.617.1     21B (Kappa)   Kappa</span></span>
 <span><span class="co">## 285   B.1.427    B.1.427   21C (Epsilon) Epsilon</span></span></code></pre>
 </div>
-  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+<div class="section level2">
+<h2 id="custom-hierarchies">Custom Hierarchies<a class="anchor" aria-label="anchor" href="#custom-hierarchies"></a>
+</h2>
+<ul>
+<li>CCT can also examine custom hierarchies for descendants and
+ancestors</li>
+<li>This capacity is limited at the moment but can easily provide the
+same functionality as above to work with yaml-defined hierarchies.</li>
+</ul>
+<div class="section level3">
+<h3 id="create-a-randomly-nested-yaml">Create a Randomly Nested YAML<a class="anchor" aria-label="anchor" href="#create-a-randomly-nested-yaml"></a>
+</h3>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Random YAML</span></span>
+<span><span class="va">yaml</span> <span class="op">&lt;-</span> <span class="st">"fruit:\n"</span></span>
+<span><span class="va">depth</span> <span class="op">&lt;-</span> <span class="st">""</span></span>
+<span><span class="va">maxdepth</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span><span class="va">deepest</span> <span class="op">&lt;-</span> <span class="fu">stringr</span><span class="fu">::</span><span class="va"><a href="https://stringr.tidyverse.org/reference/stringr-data.html" class="external-link">fruit</a></span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu">stringr</span><span class="fu">::</span><span class="va"><a href="https://stringr.tidyverse.org/reference/stringr-data.html" class="external-link">fruit</a></span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">flip</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="kw">if</span><span class="op">(</span><span class="va">flip</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">flip</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="kw">if</span><span class="op">(</span><span class="va">flip</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span><span class="op">{</span></span>
+<span>      <span class="va">depth</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">depth</span>, <span class="st">"  "</span><span class="op">)</span></span>
+<span>      <span class="kw">if</span><span class="op">(</span><span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_count.html" class="external-link">str_count</a></span><span class="op">(</span><span class="va">depth</span>, <span class="st">"  "</span><span class="op">)</span> <span class="op">&gt;</span> <span class="va">maxdepth</span><span class="op">)</span><span class="op">{</span></span>
+<span>        <span class="va">maxdepth</span> <span class="op">&lt;-</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_count.html" class="external-link">str_count</a></span><span class="op">(</span><span class="va">depth</span>, <span class="st">"  "</span><span class="op">)</span></span>
+<span>        <span class="va">deepest</span> <span class="op">&lt;-</span> <span class="va">i</span></span>
+<span>      <span class="op">}</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">}</span><span class="kw">else</span><span class="op">{</span></span>
+<span>    <span class="va">depth</span> <span class="op">&lt;-</span> <span class="st">"  "</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="va">yaml</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">yaml</span>,</span>
+<span>                 <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">depth</span>, <span class="va">i</span>, <span class="st">":\n"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="va">yaml</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## fruit:</span></span>
+<span><span class="co">##   apple:</span></span>
+<span><span class="co">##   apricot:</span></span>
+<span><span class="co">##   avocado:</span></span>
+<span><span class="co">##   banana:</span></span>
+<span><span class="co">##   bell pepper:</span></span>
+<span><span class="co">##   bilberry:</span></span>
+<span><span class="co">##   blackberry:</span></span>
+<span><span class="co">##   blackcurrant:</span></span>
+<span><span class="co">##   blood orange:</span></span>
+<span><span class="co">##   blueberry:</span></span>
+<span><span class="co">##     boysenberry:</span></span>
+<span><span class="co">##   breadfruit:</span></span>
+<span><span class="co">##     canary melon:</span></span>
+<span><span class="co">##   cantaloupe:</span></span>
+<span><span class="co">##     cherimoya:</span></span>
+<span><span class="co">##     cherry:</span></span>
+<span><span class="co">##   chili pepper:</span></span>
+<span><span class="co">##   clementine:</span></span>
+<span><span class="co">##   cloudberry:</span></span>
+<span><span class="co">##   coconut:</span></span>
+<span><span class="co">##     cranberry:</span></span>
+<span><span class="co">##   cucumber:</span></span>
+<span><span class="co">##   currant:</span></span>
+<span><span class="co">##   damson:</span></span>
+<span><span class="co">##     date:</span></span>
+<span><span class="co">##   dragonfruit:</span></span>
+<span><span class="co">##     durian:</span></span>
+<span><span class="co">##       eggplant:</span></span>
+<span><span class="co">##   elderberry:</span></span>
+<span><span class="co">##   feijoa:</span></span>
+<span><span class="co">##   fig:</span></span>
+<span><span class="co">##   goji berry:</span></span>
+<span><span class="co">##   gooseberry:</span></span>
+<span><span class="co">##   grape:</span></span>
+<span><span class="co">##   grapefruit:</span></span>
+<span><span class="co">##   guava:</span></span>
+<span><span class="co">##   honeydew:</span></span>
+<span><span class="co">##   huckleberry:</span></span>
+<span><span class="co">##   jackfruit:</span></span>
+<span><span class="co">##     jambul:</span></span>
+<span><span class="co">##     jujube:</span></span>
+<span><span class="co">##   kiwi fruit:</span></span>
+<span><span class="co">##   kumquat:</span></span>
+<span><span class="co">##   lemon:</span></span>
+<span><span class="co">##   lime:</span></span>
+<span><span class="co">##   loquat:</span></span>
+<span><span class="co">##   lychee:</span></span>
+<span><span class="co">##   mandarine:</span></span>
+<span><span class="co">##     mango:</span></span>
+<span><span class="co">##   mulberry:</span></span>
+<span><span class="co">##     nectarine:</span></span>
+<span><span class="co">##   nut:</span></span>
+<span><span class="co">##   olive:</span></span>
+<span><span class="co">##   orange:</span></span>
+<span><span class="co">##   pamelo:</span></span>
+<span><span class="co">##   papaya:</span></span>
+<span><span class="co">##   passionfruit:</span></span>
+<span><span class="co">##   peach:</span></span>
+<span><span class="co">##     pear:</span></span>
+<span><span class="co">##     persimmon:</span></span>
+<span><span class="co">##       physalis:</span></span>
+<span><span class="co">##   pineapple:</span></span>
+<span><span class="co">##   plum:</span></span>
+<span><span class="co">##     pomegranate:</span></span>
+<span><span class="co">##   pomelo:</span></span>
+<span><span class="co">##   purple mangosteen:</span></span>
+<span><span class="co">##   quince:</span></span>
+<span><span class="co">##     raisin:</span></span>
+<span><span class="co">##       rambutan:</span></span>
+<span><span class="co">##         raspberry:</span></span>
+<span><span class="co">##         redcurrant:</span></span>
+<span><span class="co">##           rock melon:</span></span>
+<span><span class="co">##           salal berry:</span></span>
+<span><span class="co">##             satsuma:</span></span>
+<span><span class="co">##               star fruit:</span></span>
+<span><span class="co">##               strawberry:</span></span>
+<span><span class="co">##                 tamarillo:</span></span>
+<span><span class="co">##   tangerine:</span></span>
+<span><span class="co">##   ugli fruit:</span></span>
+<span><span class="co">##   watermelon:</span></span></code></pre>
+<p>Now that the hierarchy is defined in the above yaml text we can load
+it and convert it into a data.tree node network. A YAML file can also be
+supplied using the commented text.</p>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># To load a file</span></span>
+<span><span class="co"># yaml::read_yaml(yaml) %&gt;%</span></span>
+<span><span class="co">#   data.tree::as.Node(interpretNullAsList = TRUE)</span></span>
+<span></span>
+<span><span class="va">hier</span> <span class="op">&lt;-</span> <span class="fu">yaml</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/yaml/man/yaml.load.html" class="external-link">yaml.load</a></span><span class="op">(</span><span class="va">yaml</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">data.tree</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.tree/man/as.Node.html" class="external-link">as.Node</a></span><span class="op">(</span>interpretNullAsList <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">hier</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Classes 'Node', 'R6' &lt;Node&gt;</span></span>
+<span><span class="co">##   Public:</span></span>
+<span><span class="co">##     AddChild: function (name, check = c("check", "no-warn", "no-check"), ...) </span></span>
+<span><span class="co">##     AddChildNode: function (child) </span></span>
+<span><span class="co">##     AddSibling: function (name, check = c("check", "no-warn", "no-check"), ...) </span></span>
+<span><span class="co">##     AddSiblingNode: function (sibling) </span></span>
+<span><span class="co">##     attributes: active binding</span></span>
+<span><span class="co">##     attributesAll: active binding</span></span>
+<span><span class="co">##     averageBranchingFactor: active binding</span></span>
+<span><span class="co">##     children: active binding</span></span>
+<span><span class="co">##     Climb: function (...) </span></span>
+<span><span class="co">##     clone: function (deep = FALSE) </span></span>
+<span><span class="co">##     count: active binding</span></span>
+<span><span class="co">##     Do: function (fun, ..., traversal = c("pre-order", "post-order", </span></span>
+<span><span class="co">##     fields: active binding</span></span>
+<span><span class="co">##     fieldsAll: active binding</span></span>
+<span><span class="co">##     fruit: Node, R6</span></span>
+<span><span class="co">##     Get: function (attribute, ..., traversal = c("pre-order", "post-order", </span></span>
+<span><span class="co">##     height: active binding</span></span>
+<span><span class="co">##     initialize: function (name, check = c("check", "no-warn", "no-check"), ...) </span></span>
+<span><span class="co">##     isBinary: active binding</span></span>
+<span><span class="co">##     isLeaf: active binding</span></span>
+<span><span class="co">##     isRoot: active binding</span></span>
+<span><span class="co">##     leafCount: active binding</span></span>
+<span><span class="co">##     leaves: active binding</span></span>
+<span><span class="co">##     level: active binding</span></span>
+<span><span class="co">##     levelName: active binding</span></span>
+<span><span class="co">##     name: active binding</span></span>
+<span><span class="co">##     Navigate: function (path) </span></span>
+<span><span class="co">##     parent: active binding</span></span>
+<span><span class="co">##     path: active binding</span></span>
+<span><span class="co">##     pathString: active binding</span></span>
+<span><span class="co">##     position: active binding</span></span>
+<span><span class="co">##     printFormatters: active binding</span></span>
+<span><span class="co">##     Prune: function (pruneFun) </span></span>
+<span><span class="co">##     RemoveAttribute: function (name, stopIfNotAvailable = TRUE) </span></span>
+<span><span class="co">##     RemoveChild: function (name) </span></span>
+<span><span class="co">##     Revert: function (recursive = TRUE) </span></span>
+<span><span class="co">##     root: active binding</span></span>
+<span><span class="co">##     Set: function (..., traversal = c("pre-order", "post-order", "in-order", </span></span>
+<span><span class="co">##     siblings: active binding</span></span>
+<span><span class="co">##     Sort: function (attribute, ..., decreasing = FALSE, recursive = TRUE) </span></span>
+<span><span class="co">##     totalCount: active binding</span></span>
+<span><span class="co">##   Private:</span></span>
+<span><span class="co">##     p_children: list</span></span>
+<span><span class="co">##     p_name: Root</span></span>
+<span><span class="co">##     p_parent: NULL</span></span></code></pre>
+<p>The deepest element of that fake yaml is <strong>tamarillo</strong>
+let’s use that as an example.</p>
+</div>
+<div class="section level3">
+<h3 id="examining-the-custom-hierarchy">Examining the Custom Hierarchy<a class="anchor" aria-label="anchor" href="#examining-the-custom-hierarchy"></a>
+</h3>
+<p>Pull ancestors of deepest and return a node.</p>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullAncestors.html">pullAncestors</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hier</span>, </span>
+<span>              node_name <span class="op">=</span> <span class="va">deepest</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Classes 'Node', 'R6' &lt;Node&gt;</span></span>
+<span><span class="co">##   Public:</span></span>
+<span><span class="co">##     AddChild: function (name, check = c("check", "no-warn", "no-check"), ...) </span></span>
+<span><span class="co">##     AddChildNode: function (child) </span></span>
+<span><span class="co">##     AddSibling: function (name, check = c("check", "no-warn", "no-check"), ...) </span></span>
+<span><span class="co">##     AddSiblingNode: function (sibling) </span></span>
+<span><span class="co">##     attributes: active binding</span></span>
+<span><span class="co">##     attributesAll: active binding</span></span>
+<span><span class="co">##     averageBranchingFactor: active binding</span></span>
+<span><span class="co">##     children: active binding</span></span>
+<span><span class="co">##     Climb: function (...) </span></span>
+<span><span class="co">##     clone: function (deep = FALSE) </span></span>
+<span><span class="co">##     count: active binding</span></span>
+<span><span class="co">##     Do: function (fun, ..., traversal = c("pre-order", "post-order", </span></span>
+<span><span class="co">##     fields: active binding</span></span>
+<span><span class="co">##     fieldsAll: active binding</span></span>
+<span><span class="co">##     fruit: Node, R6</span></span>
+<span><span class="co">##     Get: function (attribute, ..., traversal = c("pre-order", "post-order", </span></span>
+<span><span class="co">##     height: active binding</span></span>
+<span><span class="co">##     initialize: function (name, check = c("check", "no-warn", "no-check"), ...) </span></span>
+<span><span class="co">##     isBinary: active binding</span></span>
+<span><span class="co">##     isLeaf: active binding</span></span>
+<span><span class="co">##     isRoot: active binding</span></span>
+<span><span class="co">##     leafCount: active binding</span></span>
+<span><span class="co">##     leaves: active binding</span></span>
+<span><span class="co">##     level: active binding</span></span>
+<span><span class="co">##     levelName: active binding</span></span>
+<span><span class="co">##     name: active binding</span></span>
+<span><span class="co">##     Navigate: function (path) </span></span>
+<span><span class="co">##     parent: active binding</span></span>
+<span><span class="co">##     path: active binding</span></span>
+<span><span class="co">##     pathString: active binding</span></span>
+<span><span class="co">##     position: active binding</span></span>
+<span><span class="co">##     printFormatters: active binding</span></span>
+<span><span class="co">##     Prune: function (pruneFun) </span></span>
+<span><span class="co">##     RemoveAttribute: function (name, stopIfNotAvailable = TRUE) </span></span>
+<span><span class="co">##     RemoveChild: function (name) </span></span>
+<span><span class="co">##     Revert: function (recursive = TRUE) </span></span>
+<span><span class="co">##     root: active binding</span></span>
+<span><span class="co">##     Set: function (..., traversal = c("pre-order", "post-order", "in-order", </span></span>
+<span><span class="co">##     siblings: active binding</span></span>
+<span><span class="co">##     Sort: function (attribute, ..., decreasing = FALSE, recursive = TRUE) </span></span>
+<span><span class="co">##     totalCount: active binding</span></span>
+<span><span class="co">##   Private:</span></span>
+<span><span class="co">##     p_children: list</span></span>
+<span><span class="co">##     p_name: Root</span></span>
+<span><span class="co">##     p_parent: NULL</span></span></code></pre>
+<p>Print it (looks like a table)</p>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y</span></span></code></pre></div>
+<pre><code><span><span class="co">##                                        levelName</span></span>
+<span><span class="co">## 1  Root                                         </span></span>
+<span><span class="co">## 2   °--fruit                                    </span></span>
+<span><span class="co">## 3       °--quince                               </span></span>
+<span><span class="co">## 4           °--raisin                           </span></span>
+<span><span class="co">## 5               °--rambutan                     </span></span>
+<span><span class="co">## 6                   °--redcurrant               </span></span>
+<span><span class="co">## 7                       °--salal berry          </span></span>
+<span><span class="co">## 8                           °--satsuma          </span></span>
+<span><span class="co">## 9                               °--strawberry   </span></span>
+<span><span class="co">## 10                                  °--tamarillo</span></span></code></pre>
+<p>Return an actual table. Note the lineage column of
+<code>NA</code>.</p>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullAncestors.html">pullAncestors</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hier</span>, </span>
+<span>              node_name <span class="op">=</span> <span class="va">deepest</span>,</span>
+<span>              table <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></span>
+<span><span class="va">y</span></span></code></pre></div>
+<pre><code><span><span class="co">##                                        levelName level lineage</span></span>
+<span><span class="co">## 1  Root                                              1      NA</span></span>
+<span><span class="co">## 2   °--fruit                                         2      NA</span></span>
+<span><span class="co">## 3       °--quince                                    3      NA</span></span>
+<span><span class="co">## 4           °--raisin                                4      NA</span></span>
+<span><span class="co">## 5               °--rambutan                          5      NA</span></span>
+<span><span class="co">## 6                   °--redcurrant                    6      NA</span></span>
+<span><span class="co">## 7                       °--salal berry               7      NA</span></span>
+<span><span class="co">## 8                           °--satsuma               8      NA</span></span>
+<span><span class="co">## 9                               °--strawberry        9      NA</span></span>
+<span><span class="co">## 10                                  °--tamarillo    10      NA</span></span></code></pre>
+<p>The attribute parameter is used to query the data in
+<code>pullAncestors</code> and can refer to any built in attributes of
+the <a href="https://cran.r-project.org/web/packages/data.tree/data.tree.pdf" class="external-link">data.tree
+node network</a> or custom metadata.</p>
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullAncestors.html">pullAncestors</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hier</span>, </span>
+<span>              node_name <span class="op">=</span> <span class="va">deepest</span>,</span>
+<span>              table <span class="op">=</span> <span class="cn">T</span>,</span>
+<span>              attribute <span class="op">=</span> <span class="st">"name"</span><span class="op">)</span></span>
+<span><span class="va">y</span></span></code></pre></div>
+<pre><code><span><span class="co">##                                        levelName level        name</span></span>
+<span><span class="co">## 1  Root                                              1        Root</span></span>
+<span><span class="co">## 2   °--fruit                                         2       fruit</span></span>
+<span><span class="co">## 3       °--quince                                    3      quince</span></span>
+<span><span class="co">## 4           °--raisin                                4      raisin</span></span>
+<span><span class="co">## 5               °--rambutan                          5    rambutan</span></span>
+<span><span class="co">## 6                   °--redcurrant                    6  redcurrant</span></span>
+<span><span class="co">## 7                       °--salal berry               7 salal berry</span></span>
+<span><span class="co">## 8                           °--satsuma               8     satsuma</span></span>
+<span><span class="co">## 9                               °--strawberry        9  strawberry</span></span>
+<span><span class="co">## 10                                  °--tamarillo    10   tamarillo</span></span></code></pre>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">v</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullAncestors.html">pullAncestors</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hier</span>, </span>
+<span>              node_name <span class="op">=</span> <span class="va">deepest</span>,</span>
+<span>              vector <span class="op">=</span> <span class="cn">T</span>,</span>
+<span>              attribute <span class="op">=</span> <span class="st">"name"</span><span class="op">)</span></span>
+<span><span class="va">v</span></span></code></pre></div>
+<pre><code><span><span class="co">##  [1] "Root"        "fruit"       "quince"      "raisin"      "rambutan"   </span></span>
+<span><span class="co">##  [6] "redcurrant"  "salal berry" "satsuma"     "strawberry"  "tamarillo"</span></span></code></pre>
+<p>Get descendants in a similar way as above.</p>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/getDescendants.html">getDescendants</a></span><span class="op">(</span><span class="va">hier</span>, <span class="va">v</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span>, attribute <span class="op">=</span> <span class="st">"name"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">##                                levelName</span></span>
+<span><span class="co">## 1  quince                               </span></span>
+<span><span class="co">## 2   °--raisin                           </span></span>
+<span><span class="co">## 3       °--rambutan                     </span></span>
+<span><span class="co">## 4           ¦--raspberry                </span></span>
+<span><span class="co">## 5           °--redcurrant               </span></span>
+<span><span class="co">## 6               ¦--rock melon           </span></span>
+<span><span class="co">## 7               °--salal berry          </span></span>
+<span><span class="co">## 8                   °--satsuma          </span></span>
+<span><span class="co">## 9                       ¦--star fruit   </span></span>
+<span><span class="co">## 10                      °--strawberry   </span></span>
+<span><span class="co">## 11                          °--tamarillo</span></span></code></pre>
+</div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
 </div>
 
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p>
-<p>Developed by Adrian Zetner.</p>
+  <p>Developed by Adrian Zetner.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
     </footer>
 </div>
 
-  
 
-  
+
+
 
   </body>
 </html>

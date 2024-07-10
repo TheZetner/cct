@@ -1,11 +1,10 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   hierarchyfuncs: hierarchyfuncs.html
   usingcctfunctions: usingcctfunctions.html
-last_built: 2024-01-25T21:24Z
+last_built: 2024-07-10T16:07Z
 urls:
   reference: https://thezetner.github.io/cct/reference
   article: https://thezetner.github.io/cct/articles
-
