@@ -1,6 +1,6 @@
 Package: CCT
 Title: Common Covid Tasks
-Version: 0.7.0
+Version: 0.7.1
 Authors@R: 
     person(given = "Adrian",
            family = "Zetner",
@@ -8,7 +8,7 @@ Authors@R:
            email = "adrian.zetner@phac-aspc.gc.ca",
            comment = c(ORCID = "0000-0003-4947-9756"))
 Description: Common Covid Tasks (CCT) provides a one stop shop for functions that support common requests for SARS-CoV-2 information.
-Date: 2024-07-09
+Date: 2025-02-17
 URL: https://github.com/TheZetner/cct,
     https://thezetner.github.io/cct/
 License: Apache License (>= 2)
