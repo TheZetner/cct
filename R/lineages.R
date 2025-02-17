@@ -382,16 +382,16 @@ getDescendants <-
 #' @param x Table of lineages (lineage column necessary)
 #' @param network Network produced by `fromDFtoNetwork()`
 #' @param unique Each child only has one parent
-#' @param ... Arguments passed to `getDescendants`
+#' @param attribute Attribute argument to pass to `getDescendants`
 #'
 #' @return Same table with all children added in child column
 #' @export
 #'
 expandChildren <-
-  function(x, network, unique = TRUE, ...) {
+  function(x, network, unique = TRUE, attribute = "lineage") {
     # Get descendants of all lineages
     listvars <- x %>%
-      purrr::pmap(~ getDescendants(network, .x, table = T, vector = T, ...)) %>%
+      purrr::pmap(~ getDescendants(network, .x, table = T, vector = T, attribute)) %>%
       purrr::set_names(x$lineage)
 
     # Ensure uniqueness
